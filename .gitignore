@@ -1,0 +1,35 @@
+# Sensitive Info
+cookie.txt
+zerodha_token.txt
+zerodha_token.txt.backup
+
+# Large Data Blocks
+icharts_download/
+NIFTY-index-data/
+nifty_spot_data/
+sensex_index_data/
+sensex_straddle_download/
+results output/
+VWAP_Rolling_Deliverables/
+
+# Results & Logs
+*.csv
+*.xlsx
+*.json
+*.pdf
+*.png
+!README.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+env/
+venv/
+.streamlit/
+
+# temporary
+/tmp/
+~$*

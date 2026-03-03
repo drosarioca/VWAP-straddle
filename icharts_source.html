@@ -1,0 +1,2174 @@
+<html lang="en" class="mdl-js" data-select2-id="select2-data-11-7rqn"><head><style>
+	body.dark-theme {
+		background-color: #1b1f2a !important;
+		color: #f8f8f8 !important;
+	}
+
+	#frm1 {
+		margin: 0 !important;
+	}
+
+	input.select2-search__field {
+		font-size: small;
+	}
+
+
+	.chart-container {
+		border: 2px solid lightgrey;
+	}
+
+	.select2-container--default .select2-selection--single {
+		border: none !important;
+		font-size: smaller !important;
+	}
+
+	.select2-dark-selection .select2-selection__rendered {
+		color: #fff !important;
+		background-color: #1b1f2a !important;
+		/* force white text */
+	}
+
+	span.select2-selection.select2-selection--single.select2-dark-selection {
+		background-color: #1b1f2a !important;
+	}
+
+	.select2-dark-selection .select2-selection__rendered::before {
+		color: #bbb !important;
+		opacity: 1;
+	}
+
+	/* --- Dropdown options --- */
+	.select2-dark-dropdown .select2-results__options {
+		background-color: #1b1f2a;
+		color: #fff;
+	}
+
+	/* Highlighted option */
+	.select2-dark-dropdown .select2-results__option--highlighted {
+		background-color: #1b1f2a;
+		color: #fff;
+	}
+
+	/* --- Dropdown search bar wrapper --- */
+	.select2-dark-dropdown .select2-search.select2-search--dropdown {
+		background-color: #1b1f2a;
+		padding: 2px;
+	}
+
+	/* Dropdown search input */
+	.select2-dark-dropdown .select2-search__field {
+		background-color: #1b1f2a;
+		color: #fff;
+		/* border: 1px solid #555; */
+	}
+
+	/* Placeholder in search input */
+	.select2-dark-dropdown .select2-search__field::placeholder {
+		color: #bbb;
+		opacity: 1;
+	}
+
+	/* --- Scrollbar for dropdown --- */
+	.select2-dark-dropdown .select2-results__options::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	.select2-container--default .select2-results__option--selected {
+		background-color: #5897fb !important;
+		border: none;
+		color: white;
+	}
+
+	#select2-strikePrice-container {
+		margin-right: 50px !important;
+		line-height: 23px !important;
+		border: none;
+		color: #1b1f2a;
+	}
+
+	#select2-selectExpiry-container {
+		line-height: 23px !important;
+	}
+
+	span.select2-results {
+		color: #1b1f2a !important;
+	}
+
+	.mdl-radio__outer-circle,
+	.mdl-radio__inner-circle {
+		border: 2px solid #1890cc !important;
+		font-weight: bold;
+	}
+
+	.chart-container:hover {
+		background-color: lightblue;
+		color: white;
+		border: 2px solid lightgrey;
+	}
+
+	select#noOfChartsStraddle {
+		text-align: center;
+	}
+
+	/***iframe { height: 85% !important }**/
+	/* iframe {
+		height: calc(100% - 80px) !important
+	} */
+
+	@media(max-width : 768px) {
+
+		/* iframe {
+			height: calc(100% - 50px) !important
+		} */
+
+	}
+
+	body {
+		line-height: 10px !important;
+	}
+
+	@-moz-document url-prefix() {
+		body {
+			line-height: 10px !important;
+		}
+
+		/* iframe {
+			height: 85% !important
+		} */
+	}
+</style>
+
+
+
+
+    <!-- Prevent form resubmission -->
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TZ4648NQ"></script><script src="https://connect.facebook.net/signals/config/2048886098880661?v=2.9.256&amp;r=stable&amp;domain=www.icharts.in&amp;hme=18f1088ef3e8892a74f943ddaee05e3bbd28c980d3b65c4c57d9fe86969d4bce&amp;ex_m=95%2C158%2C135%2C20%2C67%2C68%2C128%2C63%2C42%2C129%2C72%2C62%2C10%2C142%2C81%2C15%2C94%2C123%2C116%2C70%2C73%2C122%2C139%2C103%2C144%2C7%2C3%2C4%2C6%2C5%2C2%2C82%2C92%2C145%2C226%2C170%2C56%2C228%2C229%2C49%2C185%2C27%2C69%2C234%2C233%2C173%2C29%2C55%2C9%2C58%2C88%2C89%2C90%2C96%2C119%2C28%2C26%2C121%2C118%2C117%2C136%2C71%2C138%2C137%2C44%2C54%2C112%2C14%2C141%2C39%2C215%2C217%2C180%2C23%2C24%2C25%2C17%2C18%2C38%2C34%2C36%2C35%2C77%2C83%2C87%2C101%2C127%2C130%2C40%2C102%2C21%2C19%2C108%2C64%2C32%2C132%2C131%2C133%2C124%2C22%2C31%2C53%2C100%2C140%2C65%2C16%2C134%2C105%2C76%2C61%2C30%2C195%2C165%2C285%2C213%2C156%2C198%2C191%2C166%2C98%2C120%2C75%2C110%2C48%2C41%2C43%2C104%2C109%2C115%2C52%2C59%2C114%2C47%2C50%2C46%2C91%2C143%2C0%2C113%2C13%2C111%2C11%2C1%2C51%2C84%2C57%2C60%2C107%2C80%2C79%2C146%2C147%2C85%2C86%2C8%2C93%2C45%2C125%2C78%2C74%2C66%2C106%2C97%2C37%2C126%2C33%2C99%2C12%2C148" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+		
+		// var isDarkMode;
+		// isDarkMode = localStorage.getItem("isDarkMode") === "true";
+		// if (isDarkMode === true) {
+			// $("body").addClass("dark-theme");
+			// $("#theme-toggle").prop("checked", true);
+		// }
+		
+		// $("#theme-toggle").click(function() {
+			// if ($("body").hasClass("dark-theme")) {
+				// $("body").removeClass("dark-theme");
+				// localStorage.setItem("isDarkMode", false);
+				// isDarkMode = false;
+				// // setLightModeOptions();
+			// } else {
+				// $("body").addClass("dark-theme");
+				// localStorage.setItem("isDarkMode", true);
+				// isDarkMode = true;
+				// // setDarkModeOptions();
+			// }
+		// });  
+    </script>
+
+    <!-- Meta tags --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Stylesheets -->
+    <link href="sm-core-css.css" rel="stylesheet" type="text/css">
+    <link href="blue.css?version=6" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/opt/css/Material_icon.css?4">
+    <link rel="stylesheet" href="/opt/css/TopMenuJson_offer.css?4">
+<!--
+    <link rel="stylesheet" href="/opt/css/TopMenuJson.css">
+-->
+	
+	
+    <link rel="stylesheet" href="assets/mdl/material.indigo-pink.min.css?4">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Scripts --> 
+    <script src="jquery2.js"></script>
+    <script src="assets/mdl/material.min.js?4"></script>
+
+  <script src="/opt/js/DarkTheme.js?8"></script>
+    <!--   <script src="/opt/js/DarkMode.js"></script>
+	<link rel="stylesheet" href="css/dark-theme_v1.css?v=7.84">
+	
+	 -->  
+
+	
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZN58C89YGF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZN58C89YGF');
+</script>
+
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2048886098880661');
+fbq('track', 'PageView');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TZ4648NQ');</script>
+<!-- End Google Tag Manager -->
+
+	
+</head>
+<body style="margin: 0px; font-family: Helvetica, Arial, sans-serif; background-color: white; color: rgb(27, 31, 42);">
+    
+    <nav id="main-nav">
+        <input id="main-menu-state" type="checkbox">
+        <label class="main-menu-btn" for="main-menu-state"><span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+        <ul id="main-menu" class="sm sm-blue" data-smartmenus-id="17700633607916467"><li id="Home" class=""><a href="/opt/index.php" target="">Home</a></li><li id="Futures" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-1" aria-haspopup="true" aria-controls="sm-17700633607916467-2" aria-expanded="false">Futures<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-2" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-1" aria-expanded="false"><li id="" class=""><a href="/opt/FnOCharts.php" target="">FnO Charts (TradingView)</a></li><li id="" class=""><a href="/opt/SymbolDashboard.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Symbol Dashboard</a></li><li id="" class=""><a href="/opt/FuturesChart.php" target="">Futures Chart</a></li><li id="" class=""><a href="/opt/FuturesOIBuildup.php" target="">OI Buildup</a></li><li id="" class=""><a href="/opt/FuturesOIScan.php" target="">OI Scan</a></li><li id="" class=""><a href="/opt/ScripsInUptrendDowntrend.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Scrips In Uptrend / Downtrend</a></li><li id="" class=""><a href="/opt/FuturesOIBreakup.php" target="">OI Breakup</a></li><li id="" class=""><a href="/opt/OpenHighLowScan.php" target="">Open-High / Open-Low</a></li><li id="" class=""><a href="/opt/FuturesPreopen.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Futures Preopen</a></li><li id="" class=""><a href="/opt/DaywiseSummary.php" target="">Daywise Price &amp; OI Summary</a></li><li id="" class=""><a href="/opt/DaywiseDetails.php" target="">Daywise Price &amp; OI Details</a></li><li id="" class=""><a href="/opt/VolumeAndOISpikesScan.php" target="">Volume / OI / OI Chg Spikes</a></li><li id="" class=""><a href="/opt/Heatmap.php" target="">Heatmap</a></li><li id="" class=""><a href="/opt/FuturesRollover.php" target="">Futures Rollover</a></li><li id="" class=""><a href="/opt/ParticipantsWiseOIDashboard.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Participant Wise OI Dashboard</a></li><li id="" class=""><a href="/opt/ParticipantWiseOITrends.php" target="">Participant Wise OI Trends</a></li><li id="" class=""><a href="/opt/SectorSummary.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Sector Summary - New</a></li><li id="" class=""><a href="/opt/SupportResistanceScan.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Support/Resistance Scan - New</a></li></ul></li><li id="Options" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-3" aria-haspopup="true" aria-controls="sm-17700633607916467-4" aria-expanded="false">Options<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-4" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-3" aria-expanded="false"><li id="" class=""><a href="/opt/FnOCharts.php" target="">FnO Charts (TradingView)</a></li><li id="" class=""><a href="/opt/OptionsChart.php" target="">Options Chart</a></li><li id="" class=""><a href="/opt/OptionChain.php" target="">Options Chain</a></li><li id="" class=""><a href="/opt/OptionChain_Old.php" target="">Options Chain - Old</a></li><li id="" class=""><a href="/opt/OptionChain_Beta_MinuteWise.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Option Chain - Min-by-Min - New</a></li><li id="" class=""><a href="/opt/PremiumDecay.php" target="">Premium Decay</a></li><li id="" class=""><a href="/opt/OpenHighLowScanOptions.php" target="">Open-High / Open-Low</a></li><li id="" class=""><a href="/opt/OptionOIStats.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Option OI Stats</a></li><li id="" class=""><a href="/opt/OptionSnapshot.php" target="">Option Snapshot</a></li><li id="" class=""><a href="/opt/OptionsOIBreakup.php" target="">Options OI Breakup</a></li><li id="" class=""><a href="/opt/PriceVsOI.php" target="">Price vs OI</a></li><li id="" class=""><a href="/opt/MultiStrikeOI.php" target="">Multi Strike OI</a></li><li id="" class=""><a href="/opt/CumulativeOIChange.php" target="">Cumulative OI Change</a></li><li id="" class=""><a href="/opt/TotalPECEOIDiff.php" target="">Total PE-CE OI Diff</a></li><li id="" class=""><a href="/opt/TotalPECEOIDiff_Beta.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Total PE-CE OI Diff - New</a></li><li id="" class=""><a href="/opt/MultiStrikePCR.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Multi Strike PCR - New</a></li><li id="" class=""><a href="/opt/MaxPain.php" target="">Max Pain</a></li><li id="ivTools" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-5" aria-haspopup="true" aria-controls="sm-17700633607916467-6" aria-expanded="false">IV Tools<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-6" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-5" aria-expanded="false"><li id="" class=""><a href="/opt/VolatilitySkew.php" target="">Volatility Skew</a></li><li id="" class=""><a href="/opt/iv.php" target="">IV Chart</a></li><li id="" class=""><a href="/opt/iv_hv.php" target="">IV-HV Chart</a></li><li id="" class=""><a href="/opt/ivr.php" target="">IVR-IVP Chart</a></li><li id="" class=""><a href="/opt/IVR-IVP-Scan.php" target="">IVR-IVP Scan</a></li></ul></li></ul></li><li id="Strategies" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-7" aria-haspopup="true" aria-controls="sm-17700633607916467-8" aria-expanded="false">Strategies<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-8" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-7" aria-expanded="false"><li id="" class=""><a href="/opt/StrategyBuilder" target=""><img class="new-icon" src="/opt/images/beta_icon_green_v2.png" alt="icon"> Strategy Builder</a></li><li id="" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-9" aria-haspopup="true" aria-controls="sm-17700633607916467-10" aria-expanded="false">Straddle / Strangle<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-10" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-9" aria-expanded="false"><li id="" class=""><a href="/opt/StraddleSnapshot.php" target="">Straddle Snapshot</a></li><li id="" class=""><a href="/opt/StraddleCharts.php" target="">Straddle Charts</a></li><li id="" class=""><a href="/opt/StraddleWatch.php" target="">Straddle Watch</a></li><li id="" class=""><a href="/opt/StraddleChartsPlus.php" target="">Straddle Charts Plus</a></li><li id="" class=""><a href="/opt/StraddleComboCharts.php" target="">Straddle Combo Charts</a></li><li id="" class=""><a href="/opt/MultiStraddleCharts.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Multi Straddles - New</a></li><li id="" class=""><a href="/opt/StraddleChartsTV_Beta.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Straddle Charts (TradingView)- New</a></li><li id="" class=""><a href="/opt/StraddleChartsATM_Beta.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> ATM Straddle Chart - New</a></li></ul></li><li id="" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-11" aria-haspopup="true" aria-controls="sm-17700633607916467-12" aria-expanded="false">Spreads<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-12" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-11" aria-expanded="false"><li id="" class=""><a href="/opt/SpreadChart.php" target="">Spread Chart</a></li><li id="" class=""><a href="/opt/SpreadChart_TV.php" target=""><img class="new-icon" src="/opt/images/beta_icon_green_v2.png" alt="icon"> Spread Chart (TradingView)</a></li></ul></li><li id="" class=""><a href="/opt/Butterfly.php" target="">Butterfly</a></li><li id="" class=""><a href="/opt/IronButterfly.php" target="">Iron Condor / Iron Fly</a></li><li id="" class=""><a href="/opt/DoubleCalendar.php" target="">Double Calendar / Diagonal</a></li></ul></li><li id="Tools" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-13" aria-haspopup="true" aria-controls="sm-17700633607916467-14" aria-expanded="false">Tools<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-14" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-13" aria-expanded="false"><li id="" class=""><a href="/opt/StrategyBuilder" target=""><img class="new-icon" src="/opt/images/beta_icon_green_v2.png" alt="icon"> Strategy Builder</a></li><li id="" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-15" aria-haspopup="true" aria-controls="sm-17700633607916467-16" aria-expanded="false">Old Versions<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-16" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-15" aria-expanded="false"><li id="" class=""><a href="/opt/PortfolioTracker.php" target="">Portfolio Tracker</a></li><li id="" class=""><a href="/opt/FnOCharts_Old.php" target="">FnO Charts (TradingView) - Old</a></li><li id="" class=""><a href="/opt/OptionOIStats_Old.php" target="">OI Stats (Prev)</a></li><li id="" class=""><a href="/opt/MultiStrikeOI_prev_version.php" target="">Multi Strike OI (Prev)</a></li><li id="" class=""><a href="/opt/TotalPECEOIDiff_prev_version.php" target="">Total PE-CE OI Diff (Prev)</a></li><li id="" class=""><a href="/opt/OptionsOIBreakup_prev_version.php" target="">Options OI Breakup (Prev)</a></li><li id="" class=""><a href="/opt/PriceVsOI_Old.php" target="">Price vs OI (Prev)</a></li><li id="" class=""><a href="/opt/CumulativeOIChange_Old.php" target="">Cumulative OI Change (Prev)</a></li><li id="" class=""><a href="/opt/FuturesOIBreakup_prev_version.php" target="">OI Breakup (Prev)</a></li><li id="" class=""><a href="/opt/Heatmap_prev_version.php" target="">Heatmap (Prev)</a></li></ul></li></ul></li><li id="LiveTools" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-17" aria-haspopup="true" aria-controls="sm-17700633607916467-18" aria-expanded="false">Live Tools<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-18" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-17" aria-expanded="false"><li id="" class=""><a href="/opt/Brokers.php" target="">Brokers</a></li><li id="" class=""><a href="/opt/OptionChainRT.php" target="">Option Chain</a></li><li id="" class=""><a href="/opt/StrategyBuilderRT" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Strategy Builder</a></li><li id="" class=""><a href="/opt/FnOChartsRT.php" target=""><img class="new-icon" src="/opt/images/beta_icon_green_v2.png" alt="icon"> FnO Charts (TradingView)</a></li><li id="" class=""><a href="/opt/OptionTrader.php" target=""><img class="new-icon" src="/opt/images/beta_icon_green_v2.png" alt="icon"> Option Trader</a></li><li id="" class=""><a href="/opt/PriceVsOIRT.php" target="">Price Vs OI</a></li><li id="" class=""><a href="/opt/StraddleChartsRT_TV.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Straddle Charts (TradingView)</a></li><li id="" class=""><a href="/opt/StraddleChartsRT.php" target="">Straddle Charts</a></li><li id="" class=""><a href="/opt/MultiStraddleChartsRT.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Multi Straddle Charts</a></li><li id="" class=""><a href="/opt/PriceAndOISummaryRT.php" target="">Price And OI Summary</a></li><li id="" class=""><a href="/opt/OpenHighLowScanRT.php" target="">Futures Open-High / Open-Low</a></li><li id="" class=""><a href="/opt/FuturesOIBuildupRT.php" target="">Futures OI Buildup</a></li><li id="" class=""><a href="/opt/OptionOIStatsRT.php" target="">Option OI Stats</a></li><li id="" class=""><a href="/opt/MultiStrikeOIRT.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Multi Strike OI</a></li><li id="" class=""><a href="/opt/BrokerLogout.php" target="">Broker Logout</a></li></ul></li><li id="Help" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-19" aria-haspopup="true" aria-controls="sm-17700633607916467-20" aria-expanded="false">Help<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-20" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-19" aria-expanded="false"><li id="" class=""><a href="/opt/FAQ.php" target="blank">FAQ</a></li><li id="" class=""><a href="https://www.youtube.com/user/IndiaiCharts/videos" target="blank">Videos</a></li><li id="" class=""><a href="/opt/Documentation.php" target="">Documentation</a></li><li id="" class=""><a href="/opt/WebsiteUpdates.php" target="">Website Updates</a></li><li id="" class=""><a href="/opt/Disclaimer.php" target="">Disclaimer</a></li><li id="" class=""><a href="/opt/Partners.php" target="">Partners</a></li><li id="telegram" class="telegramclassNew"><a href="https://t.me/+Rj-i-hHeuLvY_U65" target="">Telegram Help &nbsp;<i class="fa-brands" style="font-size:23px;"></i></a></li></ul></li><li id="profile-menu" class=""><a href="#" target="" class="has-submenu" id="sm-17700633607916467-21" aria-haspopup="true" aria-controls="sm-17700633607916467-22" aria-expanded="false">Profile<span class="sub-arrow"></span></a><ul id="sm-17700633607916467-22" role="group" aria-hidden="true" aria-labelledby="sm-17700633607916467-21" aria-expanded="false"><li id="" class=""><a href="/opt/ManageSymbolLists.php" target=""><img class="new-icon" src="/opt/images/newicon.png" alt="icon"> Manage Symbol Lists</a></li><li id="" class=""><a href="/opt/ChangePassword.php" target="">Change Password</a></li><li id="" class=""><a href="/opt/MyAccount.php" target="">My Account</a></li></ul></li><li id="subscription-details" class=""><a href="/opt/SubscriptionDetails.php" target="">Subscription Details</a></li><li id="Logout" class="access"><a href="/opt/logout.php" target="">Logout</a></li></ul>
+    </nav>
+	
+
+<input name="RenewalDateDifference" id="RenewalDateDifference" type="hidden" value="14">
+<input name="userName" id="userName" type="hidden" value="arung">
+    <script type="text/javascript">
+        var menuHTML = "<li id='Home' class=''><a href='\/opt\/index.php' target=''>Home<\/a><\/li><li id='Futures' class=''><a href='#' target=''>Futures<\/a><ul><li id='' class=''><a href='\/opt\/FnOCharts.php' target=''>FnO Charts (TradingView)<\/a><\/li><li id='' class=''><a href='\/opt\/SymbolDashboard.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Symbol Dashboard<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesChart.php' target=''>Futures Chart<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesOIBuildup.php' target=''>OI Buildup<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesOIScan.php' target=''>OI Scan<\/a><\/li><li id='' class=''><a href='\/opt\/ScripsInUptrendDowntrend.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Scrips In Uptrend \/ Downtrend<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesOIBreakup.php' target=''>OI Breakup<\/a><\/li><li id='' class=''><a href='\/opt\/OpenHighLowScan.php' target=''>Open-High \/ Open-Low<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesPreopen.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Futures Preopen<\/a><\/li><li id='' class=''><a href='\/opt\/DaywiseSummary.php' target=''>Daywise Price & OI Summary<\/a><\/li><li id='' class=''><a href='\/opt\/DaywiseDetails.php' target=''>Daywise Price & OI Details<\/a><\/li><li id='' class=''><a href='\/opt\/VolumeAndOISpikesScan.php' target=''>Volume \/ OI \/ OI Chg Spikes<\/a><\/li><li id='' class=''><a href='\/opt\/Heatmap.php' target=''>Heatmap<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesRollover.php' target=''>Futures Rollover<\/a><\/li><li id='' class=''><a href='\/opt\/ParticipantsWiseOIDashboard.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Participant Wise OI Dashboard<\/a><\/li><li id='' class=''><a href='\/opt\/ParticipantWiseOITrends.php' target=''>Participant Wise OI Trends<\/a><\/li><li id='' class=''><a href='\/opt\/SectorSummary.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Sector Summary - New<\/a><\/li><li id='' class=''><a href='\/opt\/SupportResistanceScan.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Support\/Resistance Scan - New<\/a><\/li><\/ul><\/li><li id='Options' class=''><a href='#' target=''>Options<\/a><ul><li id='' class=''><a href='\/opt\/FnOCharts.php' target=''>FnO Charts (TradingView)<\/a><\/li><li id='' class=''><a href='\/opt\/OptionsChart.php' target=''>Options Chart<\/a><\/li><li id='' class=''><a href='\/opt\/OptionChain.php' target=''>Options Chain<\/a><\/li><li id='' class=''><a href='\/opt\/OptionChain_Old.php' target=''>Options Chain - Old<\/a><\/li><li id='' class=''><a href='\/opt\/OptionChain_Beta_MinuteWise.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Option Chain - Min-by-Min - New<\/a><\/li><li id='' class=''><a href='\/opt\/PremiumDecay.php' target=''>Premium Decay<\/a><\/li><li id='' class=''><a href='\/opt\/OpenHighLowScanOptions.php' target=''>Open-High \/ Open-Low<\/a><\/li><li id='' class=''><a href='\/opt\/OptionOIStats.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Option OI Stats<\/a><\/li><li id='' class=''><a href='\/opt\/OptionSnapshot.php' target=''>Option Snapshot<\/a><\/li><li id='' class=''><a href='\/opt\/OptionsOIBreakup.php' target=''>Options OI Breakup<\/a><\/li><li id='' class=''><a href='\/opt\/PriceVsOI.php' target=''>Price vs OI<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStrikeOI.php' target=''>Multi Strike OI<\/a><\/li><li id='' class=''><a href='\/opt\/CumulativeOIChange.php' target=''>Cumulative OI Change<\/a><\/li><li id='' class=''><a href='\/opt\/TotalPECEOIDiff.php' target=''>Total PE-CE OI Diff<\/a><\/li><li id='' class=''><a href='\/opt\/TotalPECEOIDiff_Beta.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Total PE-CE OI Diff - New<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStrikePCR.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Multi Strike PCR - New<\/a><\/li><li id='' class=''><a href='\/opt\/MaxPain.php' target=''>Max Pain<\/a><\/li><li id='ivTools' class=''><a href='#' target=''>IV Tools<\/a><ul><li id='' class=''><a href='\/opt\/VolatilitySkew.php' target=''>Volatility Skew<\/a><\/li><li id='' class=''><a href='\/opt\/iv.php' target=''>IV Chart<\/a><\/li><li id='' class=''><a href='\/opt\/iv_hv.php' target=''>IV-HV Chart<\/a><\/li><li id='' class=''><a href='\/opt\/ivr.php' target=''>IVR-IVP Chart<\/a><\/li><li id='' class=''><a href='\/opt\/IVR-IVP-Scan.php' target=''>IVR-IVP Scan<\/a><\/li><\/ul><\/li><\/ul><\/li><li id='Strategies' class=''><a href='#' target=''>Strategies<\/a><ul><li id='' class=''><a href='\/opt\/StrategyBuilder' target=''><img class='new-icon' src='\/opt\/images\/beta_icon_green_v2.png' alt='icon' \/> Strategy Builder<\/a><\/li><li id='' class=''><a href='#' target=''>Straddle \/ Strangle<\/a><ul><li id='' class=''><a href='\/opt\/StraddleSnapshot.php' target=''>Straddle Snapshot<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleCharts.php' target=''>Straddle Charts<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleWatch.php' target=''>Straddle Watch<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleChartsPlus.php' target=''>Straddle Charts Plus<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleComboCharts.php' target=''>Straddle Combo Charts<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStraddleCharts.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Multi Straddles - New<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleChartsTV_Beta.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Straddle Charts (TradingView)- New<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleChartsATM_Beta.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> ATM Straddle Chart - New<\/a><\/li><\/ul><\/li><li id='' class=''><a href='#' target=''>Spreads<\/a><ul><li id='' class=''><a href='\/opt\/SpreadChart.php' target=''>Spread Chart<\/a><\/li><li id='' class=''><a href='\/opt\/SpreadChart_TV.php' target=''><img class='new-icon' src='\/opt\/images\/beta_icon_green_v2.png' alt='icon' \/> Spread Chart (TradingView)<\/a><\/li><\/ul><\/li><li id='' class=''><a href='\/opt\/Butterfly.php' target=''>Butterfly<\/a><\/li><li id='' class=''><a href='\/opt\/IronButterfly.php' target=''>Iron Condor \/ Iron Fly<\/a><\/li><li id='' class=''><a href='\/opt\/DoubleCalendar.php' target=''>Double Calendar \/ Diagonal<\/a><\/li><\/ul><\/li><li id='Tools' class=''><a href='#' target=''>Tools<\/a><ul><li id='' class=''><a href='\/opt\/StrategyBuilder' target=''><img class='new-icon' src='\/opt\/images\/beta_icon_green_v2.png' alt='icon' \/> Strategy Builder<\/a><\/li><li id='' class=''><a href='#' target=''>Old Versions<\/a><ul><li id='' class=''><a href='\/opt\/PortfolioTracker.php' target=''>Portfolio Tracker<\/a><\/li><li id='' class=''><a href='\/opt\/FnOCharts_Old.php' target=''>FnO Charts (TradingView) - Old<\/a><\/li><li id='' class=''><a href='\/opt\/OptionOIStats_Old.php' target=''>OI Stats (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStrikeOI_prev_version.php' target=''>Multi Strike OI (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/TotalPECEOIDiff_prev_version.php' target=''>Total PE-CE OI Diff (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/OptionsOIBreakup_prev_version.php' target=''>Options OI Breakup (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/PriceVsOI_Old.php' target=''>Price vs OI (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/CumulativeOIChange_Old.php' target=''>Cumulative OI Change (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesOIBreakup_prev_version.php' target=''>OI Breakup (Prev)<\/a><\/li><li id='' class=''><a href='\/opt\/Heatmap_prev_version.php' target=''>Heatmap (Prev)<\/a><\/li><\/ul><\/li><\/ul><\/li><li id='LiveTools' class=''><a href='#' target=''>Live Tools<\/a><ul><li id='' class=''><a href='\/opt\/Brokers.php' target=''>Brokers<\/a><\/li><li id='' class=''><a href='\/opt\/OptionChainRT.php' target=''>Option Chain<\/a><\/li><li id='' class=''><a href='\/opt\/StrategyBuilderRT' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Strategy Builder<\/a><\/li><li id='' class=''><a href='\/opt\/FnOChartsRT.php' target=''><img class='new-icon' src='\/opt\/images\/beta_icon_green_v2.png' alt='icon' \/> FnO Charts (TradingView)<\/a><\/li><li id='' class=''><a href='\/opt\/OptionTrader.php' target=''><img class='new-icon' src='\/opt\/images\/beta_icon_green_v2.png' alt='icon' \/> Option Trader<\/a><\/li><li id='' class=''><a href='\/opt\/PriceVsOIRT.php' target=''>Price Vs OI<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleChartsRT_TV.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Straddle Charts (TradingView)<\/a><\/li><li id='' class=''><a href='\/opt\/StraddleChartsRT.php' target=''>Straddle Charts<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStraddleChartsRT.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Multi Straddle Charts<\/a><\/li><li id='' class=''><a href='\/opt\/PriceAndOISummaryRT.php' target=''>Price And OI Summary<\/a><\/li><li id='' class=''><a href='\/opt\/OpenHighLowScanRT.php' target=''>Futures Open-High \/ Open-Low<\/a><\/li><li id='' class=''><a href='\/opt\/FuturesOIBuildupRT.php' target=''>Futures OI Buildup<\/a><\/li><li id='' class=''><a href='\/opt\/OptionOIStatsRT.php' target=''>Option OI Stats<\/a><\/li><li id='' class=''><a href='\/opt\/MultiStrikeOIRT.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Multi Strike OI<\/a><\/li><li id='' class=''><a href='\/opt\/BrokerLogout.php' target=''>Broker Logout<\/a><\/li><\/ul><\/li><li id='Help' class=''><a href='#' target=''>Help<\/a><ul><li id='' class=''><a href='\/opt\/FAQ.php' target='blank'>FAQ<\/a><\/li><li id='' class=''><a href='https:\/\/www.youtube.com\/user\/IndiaiCharts\/videos' target='blank'>Videos<\/a><\/li><li id='' class=''><a href='\/opt\/Documentation.php' target=''>Documentation<\/a><\/li><li id='' class=''><a href='\/opt\/WebsiteUpdates.php' target=''>Website Updates<\/a><\/li><li id='' class=''><a href='\/opt\/Disclaimer.php' target=''>Disclaimer<\/a><\/li><li id='' class=''><a href='\/opt\/Partners.php' target=''>Partners<\/a><\/li><li id='telegram' class='telegramclassNew'><a href='https:\/\/t.me\/+Rj-i-hHeuLvY_U65' target=''>Telegram Help &nbsp;<i class='fa-brands' style='font-size:23px;'>&#xf2c6;<\/i><\/a><\/li><\/ul><\/li><li id='profile-menu' class=''><a href='#' target=''>Profile<\/a><ul><li id='' class=''><a href='\/opt\/ManageSymbolLists.php' target=''><img class='new-icon' src='\/opt\/images\/newicon.png' alt='icon' \/> Manage Symbol Lists<\/a><\/li><li id='' class=''><a href='\/opt\/ChangePassword.php' target=''>Change Password<\/a><\/li><li id='' class=''><a href='\/opt\/MyAccount.php' target=''>My Account<\/a><\/li><\/ul><\/li><li id='subscription-details' class=''><a href='\/opt\/SubscriptionDetails.php' target=''>Subscription Details<\/a><\/li><\/li><li id='Logout' class='access'><a href='\/opt\/logout.php' target=''>Logout<\/a><\/li><\/li>";
+        $('#main-menu').html(menuHTML);
+		//console.log('renewal diffs -');
+		var renewalDt =  $('#RenewalDateDifference').val();
+		//console.log(renewalDt !== '');
+        
+		$(function() {
+		  var $mainMenuState = $('#main-menu-state');
+		  if ($mainMenuState.length) {
+			// animate mobile menu
+			$mainMenuState.change(function(e) {
+			  var $menu = $('#main-menu');
+			  if (this.checked) {
+				$menu.hide().slideDown(250, function() { $menu.css('display', ''); });
+			  } else {
+				$menu.show().slideUp(250, function() { $menu.css('display', ''); });
+			  }
+			});
+			// hide mobile menu beforeunload
+			$(window).on('beforeunload unload', function() {
+			  if ($mainMenuState[0].checked) {
+				$mainMenuState[0].click();
+			  }
+			});
+		  }
+		});
+		
+
+function checkSessionHeartbeat() {
+    if (sessionExpired) return;
+
+    $.ajax({
+        url: '/opt/hcharts/stx8req/php/checkUserSession.php',
+        type: 'POST',
+        cache: false,
+        success: function (res) {
+
+            if (typeof res === 'string' && res.includes('Invalid Session')) {
+                sessionExpired = true;
+                window.location.href = '/opt/logout.php';
+            }
+        }, 
+        error: function () {
+            // ignore network issues
+        }
+    });
+}
+let sessionExpired = false;
+if($("#userName").val() !== ''){
+	// 🔁 run every 1 minute
+	setInterval(checkSessionHeartbeat, 60 * 1000);
+}
+
+
+
+
+    </script>
+
+<!-- Meta Pixel (noscript) -->
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2048886098880661&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ4648NQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script type="text/javascript" async="" src="https://widgets.in.webengage.com/js/webengage-min-v-6.0.js"></script><script id="_webengage_script_tag" type="text/javascript">
+var webengage;!function(w,e,b,n,g){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),
+arguments])}}var i,s,r=w[b],z=" ",l="init options track screen onReady".split(z),a="webPersonalization feedback survey notification notificationInbox".split(z),c="options render clear abort".split(z),p="Prepare Render Open Close Submit Complete View Click".split(z),u="identify login logout setAttribute".split(z);if(!r||!r._v){for(w[b]=r={queue:[],_v:"6.0",user:{}},i=0;i < l.length;i++)o(r,[l[i]]);for(i=0;i < a.length;i++){for(r[a[i]]={},s=0;s < c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s < p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i < u.length;i++)o(r.user,["user",u[i]]);setTimeout(function(){var f=e.createElement("script"),d=e.getElementById("_webengage_script_tag");f.type="text/javascript",f.async=!0,f.src=("https:"==e.location.protocol?"https://widgets.in.webengage.com":"http://widgets.in.webengage.com")+"/js/webengage-min-v-6.0.js",d.parentNode.insertBefore(f,d)})}}(window,document,"webengage");webengage.init("in~aa1316cc");
+</script>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;69213928e7bb417e81e32c26e4e671aa&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<br>
+	<title>Straddle Charts</title>
+	<!-- Fix for iOS Safari zooming bug -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<script type="text/javascript" src="charting_library-master/charting_library/charting_library.standalone.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script src="/opt/js/DarkMode.js"></script>
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+		integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+		integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+	<script type="text/javascript" src="charting_library-master/charting_library/tv_js_files/StraddleChart_TV_v23.2_Hiekin.min.js?v=2.24"></script>
+	<script type="text/javascript" src="charting_library-master/charting_library/tv_js_files/customIndicatorsfile_v40.min.js?v=2.0.15e"></script>
+	<script type="text/javascript" src="charting_library-master/charting_library/tv_js_files/SavingTradingView.min.js?2.3"></script>
+	<script type="text/javascript" src="charting_library-master/charting_library/tv_js_files/SavingWatchList.min.js?2.1"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script type="text/javascript" src="hcharts/stx8req/scripts/multipleChartHelper_v3.js?v=1770063360"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+	<link href="/opt/js/fSelectCustom_v4.css" rel="stylesheet">
+	<!--<script src="/opt/js/fSelect_v4.js"></script>-->
+	<script src="/opt/js/fSelect_v4_v1.js"></script>
+	<!--<form method=post  action='StraddleCharts.php' onsubmit="return isAllValuesSelected()" style='padding-left:5px;margin-left:5px;' id='frm1'>-->
+	<!--<form method=post  action='StraddleCharts.php' onsubmit="return isAllValuesSelected()" style='padding-left:5px;margin-left:5px;' id='frm1'>-->
+	<form method="post" action="/opt/StraddleChartsTV_Beta.php" onsubmit="return isAllValuesSelected()" style="padding-left:10px;margin-left:5px;margin-top:-5px;" id="frm1" data-select2-id="select2-data-frm1">
+
+		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-upgraded" for="latest" style="font-weight:normal;" data-upgraded=",MaterialRadio,MaterialRipple">Latest<input id="latest" class="mdl-radio__button" type="radio" name="rdDataType" value="latest"> <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span><span class="mdl-radio__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+		<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect mdl-js-ripple-effect--ignore-events is-checked is-upgraded" for="hist" style="font-weight:normal;" data-upgraded=",MaterialRadio,MaterialRipple">Historical<input id="hist" class="mdl-radio__button" type="radio" name="rdDataType" value="hist" checked=""> <span class="mdl-radio__outer-circle"></span><span class="mdl-radio__inner-circle"></span><span class="mdl-radio__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></label>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select is-dirty is-upgraded" style="width:140px" data-upgraded=",MaterialTextfield">
+				<label for="optSymbol" class="mdl-textfield__label">Select Symbol</label>
+				<div class="selectSymbol">
+					<select id="optSymbol" name="optSymbol" onchange="javascript:delayedOnChange(this.value);" class="mdl-textfield__input select2-hidden-accessible" data-select2-id="select2-data-optSymbol" tabindex="-1" aria-hidden="true">
+
+
+						<optgroup label="Indices"><option value="NIFTY" selected="" data-select2-id="select2-data-2-iwze">NIFTY</option><option value="BANKNIFTY">BANKNIFTY</option><option value="FINNIFTY">FINNIFTY</option><option value="MIDCPNIFTY">MIDCPNIFTY</option><option value="NIFTYNXT50">NIFTYNXT50</option></optgroup><optgroup label="BSE"><option value="SENSEX">SENSEX</option><option value="BANKEX">BANKEX</option></optgroup> <optgroup label="Stocks"><option value="360ONE">360ONE</option><option value="ABB">ABB</option><option value="ABCAPITAL">ABCAPITAL</option><option value="ADANIENSOL">ADANIENSOL</option><option value="ADANIENT">ADANIENT</option><option value="ADANIGREEN">ADANIGREEN</option><option value="ADANIPORTS">ADANIPORTS</option><option value="ALKEM">ALKEM</option><option value="AMBER">AMBER</option><option value="AMBUJACEM">AMBUJACEM</option><option value="ANGELONE">ANGELONE</option><option value="APLAPOLLO">APLAPOLLO</option><option value="APOLLOHOSP">APOLLOHOSP</option><option value="ASHOKLEY">ASHOKLEY</option><option value="ASIANPAINT">ASIANPAINT</option><option value="ASTRAL">ASTRAL</option><option value="AUBANK">AUBANK</option><option value="AUROPHARMA">AUROPHARMA</option><option value="AXISBANK">AXISBANK</option><option value="BAJAJ-AUTO">BAJAJ-AUTO</option><option value="BAJAJFINSV">BAJAJFINSV</option><option value="BAJAJHLDNG">BAJAJHLDNG</option><option value="BAJFINANCE">BAJFINANCE</option><option value="BANDHANBNK">BANDHANBNK</option><option value="BANKBARODA">BANKBARODA</option><option value="BANKINDIA">BANKINDIA</option><option value="BDL">BDL</option><option value="BEL">BEL</option><option value="BHARATFORG">BHARATFORG</option><option value="BHARTIARTL">BHARTIARTL</option><option value="BHEL">BHEL</option><option value="BIOCON">BIOCON</option><option value="BLUESTARCO">BLUESTARCO</option><option value="BOSCHLTD">BOSCHLTD</option><option value="BPCL">BPCL</option><option value="BRITANNIA">BRITANNIA</option><option value="BSE">BSE</option><option value="CAMS">CAMS</option><option value="CANBK">CANBK</option><option value="CDSL">CDSL</option><option value="CGPOWER">CGPOWER</option><option value="CHOLAFIN">CHOLAFIN</option><option value="CIPLA">CIPLA</option><option value="COALINDIA">COALINDIA</option><option value="COFORGE">COFORGE</option><option value="COLPAL">COLPAL</option><option value="CONCOR">CONCOR</option><option value="CROMPTON">CROMPTON</option><option value="CUMMINSIND">CUMMINSIND</option><option value="DABUR">DABUR</option><option value="DALBHARAT">DALBHARAT</option><option value="DELHIVERY">DELHIVERY</option><option value="DIVISLAB">DIVISLAB</option><option value="DIXON">DIXON</option><option value="DLF">DLF</option><option value="DMART">DMART</option><option value="DRREDDY">DRREDDY</option><option value="EICHERMOT">EICHERMOT</option><option value="ETERNAL">ETERNAL</option><option value="EXIDEIND">EXIDEIND</option><option value="FEDERALBNK">FEDERALBNK</option><option value="FORTIS">FORTIS</option><option value="GAIL">GAIL</option><option value="GLENMARK">GLENMARK</option><option value="GMRAIRPORT">GMRAIRPORT</option><option value="GODREJCP">GODREJCP</option><option value="GODREJPROP">GODREJPROP</option><option value="GRASIM">GRASIM</option><option value="HAL">HAL</option><option value="HAVELLS">HAVELLS</option><option value="HCLTECH">HCLTECH</option><option value="HDFCAMC">HDFCAMC</option><option value="HDFCBANK">HDFCBANK</option><option value="HDFCLIFE">HDFCLIFE</option><option value="HEROMOTOCO">HEROMOTOCO</option><option value="HINDALCO">HINDALCO</option><option value="HINDPETRO">HINDPETRO</option><option value="HINDUNILVR">HINDUNILVR</option><option value="HINDZINC">HINDZINC</option><option value="HUDCO">HUDCO</option><option value="ICICIBANK">ICICIBANK</option><option value="ICICIGI">ICICIGI</option><option value="ICICIPRULI">ICICIPRULI</option><option value="IDEA">IDEA</option><option value="IDFCFIRSTB">IDFCFIRSTB</option><option value="IEX">IEX</option><option value="INDHOTEL">INDHOTEL</option><option value="INDIANB">INDIANB</option><option value="INDIGO">INDIGO</option><option value="INDUSINDBK">INDUSINDBK</option><option value="INDUSTOWER">INDUSTOWER</option><option value="INFY">INFY</option><option value="INOXWIND">INOXWIND</option><option value="IOC">IOC</option><option value="IRCTC">IRCTC</option><option value="IREDA">IREDA</option><option value="IRFC">IRFC</option><option value="ITC">ITC</option><option value="JINDALSTEL">JINDALSTEL</option><option value="JIOFIN">JIOFIN</option><option value="JSWENERGY">JSWENERGY</option><option value="JSWSTEEL">JSWSTEEL</option><option value="JUBLFOOD">JUBLFOOD</option><option value="KALYANKJIL">KALYANKJIL</option><option value="KAYNES">KAYNES</option><option value="KEI">KEI</option><option value="KFINTECH">KFINTECH</option><option value="KOTAKBANK">KOTAKBANK</option><option value="KPITTECH">KPITTECH</option><option value="LAURUSLABS">LAURUSLABS</option><option value="LICHSGFIN">LICHSGFIN</option><option value="LICI">LICI</option><option value="LODHA">LODHA</option><option value="LT">LT</option><option value="LTF">LTF</option><option value="LTIM">LTIM</option><option value="LUPIN">LUPIN</option><option value="M&amp;M">M&amp;M</option><option value="MANAPPURAM">MANAPPURAM</option><option value="MANKIND">MANKIND</option><option value="MARICO">MARICO</option><option value="MARUTI">MARUTI</option><option value="MAXHEALTH">MAXHEALTH</option><option value="MAZDOCK">MAZDOCK</option><option value="MCX">MCX</option><option value="MFSL">MFSL</option><option value="MOTHERSON">MOTHERSON</option><option value="MPHASIS">MPHASIS</option><option value="MUTHOOTFIN">MUTHOOTFIN</option><option value="NATIONALUM">NATIONALUM</option><option value="NAUKRI">NAUKRI</option><option value="NBCC">NBCC</option><option value="NESTLEIND">NESTLEIND</option><option value="NHPC">NHPC</option><option value="NMDC">NMDC</option><option value="NTPC">NTPC</option><option value="NUVAMA">NUVAMA</option><option value="NYKAA">NYKAA</option><option value="OBEROIRLTY">OBEROIRLTY</option><option value="OFSS">OFSS</option><option value="OIL">OIL</option><option value="ONGC">ONGC</option><option value="PAGEIND">PAGEIND</option><option value="PATANJALI">PATANJALI</option><option value="PAYTM">PAYTM</option><option value="PERSISTENT">PERSISTENT</option><option value="PETRONET">PETRONET</option><option value="PFC">PFC</option><option value="PGEL">PGEL</option><option value="PHOENIXLTD">PHOENIXLTD</option><option value="PIDILITIND">PIDILITIND</option><option value="PIIND">PIIND</option><option value="PNB">PNB</option><option value="PNBHOUSING">PNBHOUSING</option><option value="POLICYBZR">POLICYBZR</option><option value="POLYCAB">POLYCAB</option><option value="POWERGRID">POWERGRID</option><option value="POWERINDIA">POWERINDIA</option><option value="PPLPHARMA">PPLPHARMA</option><option value="PREMIERENE">PREMIERENE</option><option value="PRESTIGE">PRESTIGE</option><option value="RBLBANK">RBLBANK</option><option value="RECLTD">RECLTD</option><option value="RELIANCE">RELIANCE</option><option value="RVNL">RVNL</option><option value="SAIL">SAIL</option><option value="SAMMAANCAP">SAMMAANCAP</option><option value="SBICARD">SBICARD</option><option value="SBILIFE">SBILIFE</option><option value="SBIN">SBIN</option><option value="SHREECEM">SHREECEM</option><option value="SHRIRAMFIN">SHRIRAMFIN</option><option value="SIEMENS">SIEMENS</option><option value="SOLARINDS">SOLARINDS</option><option value="SONACOMS">SONACOMS</option><option value="SRF">SRF</option><option value="SUNPHARMA">SUNPHARMA</option><option value="SUPREMEIND">SUPREMEIND</option><option value="SUZLON">SUZLON</option><option value="SWIGGY">SWIGGY</option><option value="SYNGENE">SYNGENE</option><option value="TATACONSUM">TATACONSUM</option><option value="TATAELXSI">TATAELXSI</option><option value="TATAPOWER">TATAPOWER</option><option value="TATASTEEL">TATASTEEL</option><option value="TATATECH">TATATECH</option><option value="TCS">TCS</option><option value="TECHM">TECHM</option><option value="TIINDIA">TIINDIA</option><option value="TITAN">TITAN</option><option value="TMPV">TMPV</option><option value="TORNTPHARM">TORNTPHARM</option><option value="TORNTPOWER">TORNTPOWER</option><option value="TRENT">TRENT</option><option value="TVSMOTOR">TVSMOTOR</option><option value="ULTRACEMCO">ULTRACEMCO</option><option value="UNIONBANK">UNIONBANK</option><option value="UNITDSPR">UNITDSPR</option><option value="UNOMINDA">UNOMINDA</option><option value="UPL">UPL</option><option value="VBL">VBL</option><option value="VEDL">VEDL</option><option value="VOLTAS">VOLTAS</option><option value="WAAREEENER">WAAREEENER</option><option value="WIPRO">WIPRO</option><option value="YESBANK">YESBANK</option><option value="ZYDUSLIFE">ZYDUSLIFE</option>
+
+					</optgroup></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-1-mlbh" style="width: 140px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-optSymbol-container" aria-controls="select2-optSymbol-container"><span class="select2-selection__rendered" id="select2-optSymbol-container" role="textbox" aria-readonly="true" title="NIFTY">NIFTY</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+				</div>
+			</div>
+
+					
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select is-dirty is-upgraded" style="width:100px" data-upgraded=",MaterialTextfield" data-select2-id="select2-data-10-gjvn">
+
+				<label for="optExpDate_hist" class="mdl-textfield__label">Expiry Date</label>
+				<select id="optExpDate_hist" name="optExpDate_hist" onchange="javascript:getCallPutStrikesHist_Currency(this.value);" class="mdl-textfield__input select2-hidden-accessible" data-select2-id="select2-data-optExpDate_hist" tabindex="-1" aria-hidden="true">
+
+
+					<option value="31DEC30" data-select2-id="select2-data-12-t6f3"> 31DEC30</option><option value="25JUN30" data-select2-id="select2-data-13-885g"> 25JUN30</option><option value="27DEC29" data-select2-id="select2-data-14-0z0x"> 27DEC29</option><option value="24DEC29" data-select2-id="select2-data-15-r3oq"> 24DEC29</option><option value="28JUN29" data-select2-id="select2-data-16-9dpo"> 28JUN29</option><option value="26JUN29" data-select2-id="select2-data-17-xlxc"> 26JUN29</option><option value="28DEC28" data-select2-id="select2-data-18-dgs1"> 28DEC28</option><option value="26DEC28" data-select2-id="select2-data-19-upl8"> 26DEC28</option><option value="29JUN28" data-select2-id="select2-data-20-b5g4"> 29JUN28</option><option value="27JUN28" data-select2-id="select2-data-21-0j6p"> 27JUN28</option><option value="30DEC27" data-select2-id="select2-data-22-ms22"> 30DEC27</option><option value="28DEC27" data-select2-id="select2-data-23-wq4s"> 28DEC27</option><option value="29JUN27" data-select2-id="select2-data-24-lht8"> 29JUN27</option><option value="24JUN27" data-select2-id="select2-data-25-u768"> 24JUN27</option><option value="31DEC26" data-select2-id="select2-data-26-rf9q"> 31DEC26</option><option value="29DEC26" data-select2-id="select2-data-27-emgs"> 29DEC26</option><option value="29SEP26" data-select2-id="select2-data-28-evw7"> 29SEP26</option><option value="30JUN26" data-select2-id="select2-data-29-8iwm"> 30JUN26</option><option value="25JUN26" data-select2-id="select2-data-30-6v5v"> 25JUN26</option><option value="28APR26" data-select2-id="select2-data-31-jsct"> 28APR26</option><option value="31MAR26" data-select2-id="select2-data-32-avq1"> 31MAR26</option><option value="30MAR26" data-select2-id="select2-data-33-w6cp"> 30MAR26</option><option value="26MAR26" data-select2-id="select2-data-34-5ux0"> 26MAR26</option><option value="02MAR26" data-select2-id="select2-data-35-tvbd"> 02MAR26</option><option value="24FEB26" data-select2-id="select2-data-36-ii3i"> 24FEB26</option><option value="17FEB26" data-select2-id="select2-data-37-r5jd"> 17FEB26</option><option value="10FEB26" data-select2-id="select2-data-38-jl0k"> 10FEB26</option><option value="03FEB26" selected="" data-select2-id="select2-data-8-xjb4"> 03FEB26</option><option value="27JAN26" data-select2-id="select2-data-39-ljv5"> 27JAN26</option><option value="20JAN26" data-select2-id="select2-data-40-vzmn"> 20JAN26</option><option value="13JAN26" data-select2-id="select2-data-41-bs3t"> 13JAN26</option><option value="06JAN26" data-select2-id="select2-data-42-ve1d"> 06JAN26</option><option value="30DEC25" data-select2-id="select2-data-43-4ry3"> 30DEC25</option><option value="23DEC25" data-select2-id="select2-data-44-twho"> 23DEC25</option><option value="16DEC25" data-select2-id="select2-data-45-dv0t"> 16DEC25</option><option value="09DEC25" data-select2-id="select2-data-46-n3rz"> 09DEC25</option><option value="02DEC25" data-select2-id="select2-data-47-bier"> 02DEC25</option><option value="25NOV25" data-select2-id="select2-data-48-mwyd"> 25NOV25</option><option value="18NOV25" data-select2-id="select2-data-49-8yht"> 18NOV25</option><option value="11NOV25" data-select2-id="select2-data-50-7jgk"> 11NOV25</option><option value="04NOV25" data-select2-id="select2-data-51-r3qq"> 04NOV25</option><option value="28OCT25" data-select2-id="select2-data-52-o2st"> 28OCT25</option><option value="20OCT25" data-select2-id="select2-data-53-e3aw"> 20OCT25</option><option value="14OCT25" data-select2-id="select2-data-54-i2yr"> 14OCT25</option><option value="07OCT25" data-select2-id="select2-data-55-i6bp"> 07OCT25</option><option value="30SEP25" data-select2-id="select2-data-56-zi6u"> 30SEP25</option><option value="23SEP25" data-select2-id="select2-data-57-o690"> 23SEP25</option><option value="16SEP25" data-select2-id="select2-data-58-nc3z"> 16SEP25</option><option value="09SEP25" data-select2-id="select2-data-59-hfzw"> 09SEP25</option><option value="02SEP25" data-select2-id="select2-data-60-bruw"> 02SEP25</option><option value="28AUG25" data-select2-id="select2-data-61-ig2j"> 28AUG25</option><option value="21AUG25" data-select2-id="select2-data-62-yqp2"> 21AUG25</option><option value="14AUG25" data-select2-id="select2-data-63-o0u5"> 14AUG25</option><option value="07AUG25" data-select2-id="select2-data-64-ijuq"> 07AUG25</option><option value="31JUL25" data-select2-id="select2-data-65-vo97"> 31JUL25</option><option value="24JUL25" data-select2-id="select2-data-66-37ke"> 24JUL25</option><option value="17JUL25" data-select2-id="select2-data-67-0mjb"> 17JUL25</option><option value="10JUL25" data-select2-id="select2-data-68-e8d8"> 10JUL25</option><option value="03JUL25" data-select2-id="select2-data-69-p1or"> 03JUL25</option><option value="26JUN25" data-select2-id="select2-data-70-bmdu"> 26JUN25</option><option value="19JUN25" data-select2-id="select2-data-71-v2jq"> 19JUN25</option><option value="12JUN25" data-select2-id="select2-data-72-i3az"> 12JUN25</option><option value="05JUN25" data-select2-id="select2-data-73-xn41"> 05JUN25</option><option value="29MAY25" data-select2-id="select2-data-74-nzz1"> 29MAY25</option><option value="22MAY25" data-select2-id="select2-data-75-qpos"> 22MAY25</option><option value="15MAY25" data-select2-id="select2-data-76-5bnq"> 15MAY25</option><option value="08MAY25" data-select2-id="select2-data-77-ivpr"> 08MAY25</option><option value="30APR25" data-select2-id="select2-data-78-o1ca"> 30APR25</option><option value="24APR25" data-select2-id="select2-data-79-09ia"> 24APR25</option><option value="17APR25" data-select2-id="select2-data-80-x4g7"> 17APR25</option><option value="09APR25" data-select2-id="select2-data-81-7t96"> 09APR25</option><option value="03APR25" data-select2-id="select2-data-82-ig52"> 03APR25</option><option value="27MAR25" data-select2-id="select2-data-83-7x87"> 27MAR25</option><option value="20MAR25" data-select2-id="select2-data-84-oiod"> 20MAR25</option><option value="13MAR25" data-select2-id="select2-data-85-8qsy"> 13MAR25</option><option value="06MAR25" data-select2-id="select2-data-86-tvwk"> 06MAR25</option><option value="27FEB25" data-select2-id="select2-data-87-4yic"> 27FEB25</option><option value="20FEB25" data-select2-id="select2-data-88-capc"> 20FEB25</option><option value="13FEB25" data-select2-id="select2-data-89-emdn"> 13FEB25</option><option value="06FEB25" data-select2-id="select2-data-90-04w7"> 06FEB25</option><option value="30JAN25" data-select2-id="select2-data-91-mo63"> 30JAN25</option><option value="23JAN25" data-select2-id="select2-data-92-bwlx"> 23JAN25</option><option value="16JAN25" data-select2-id="select2-data-93-9zfx"> 16JAN25</option><option value="09JAN25" data-select2-id="select2-data-94-aqmg"> 09JAN25</option><option value="02JAN25" data-select2-id="select2-data-95-cfkl"> 02JAN25</option><option value="26DEC24" data-select2-id="select2-data-96-4xf1"> 26DEC24</option><option value="19DEC24" data-select2-id="select2-data-97-mnbi"> 19DEC24</option><option value="12DEC24" data-select2-id="select2-data-98-jvqi"> 12DEC24</option><option value="05DEC24" data-select2-id="select2-data-99-9kma"> 05DEC24</option><option value="28NOV24" data-select2-id="select2-data-100-35gm"> 28NOV24</option><option value="21NOV24" data-select2-id="select2-data-101-ptlf"> 21NOV24</option><option value="14NOV24" data-select2-id="select2-data-102-qhqu"> 14NOV24</option><option value="07NOV24" data-select2-id="select2-data-103-zcdz"> 07NOV24</option><option value="31OCT24" data-select2-id="select2-data-104-vgzl"> 31OCT24</option><option value="24OCT24" data-select2-id="select2-data-105-zyly"> 24OCT24</option><option value="17OCT24" data-select2-id="select2-data-106-cp89"> 17OCT24</option><option value="10OCT24" data-select2-id="select2-data-107-baun"> 10OCT24</option><option value="03OCT24" data-select2-id="select2-data-108-ctnd"> 03OCT24</option><option value="26SEP24" data-select2-id="select2-data-109-oc3h"> 26SEP24</option><option value="19SEP24" data-select2-id="select2-data-110-op12"> 19SEP24</option><option value="12SEP24" data-select2-id="select2-data-111-u9ka"> 12SEP24</option><option value="05SEP24" data-select2-id="select2-data-112-nwss"> 05SEP24</option><option value="29AUG24" data-select2-id="select2-data-113-40vd"> 29AUG24</option><option value="22AUG24" data-select2-id="select2-data-114-9vom"> 22AUG24</option><option value="14AUG24" data-select2-id="select2-data-115-ny6g"> 14AUG24</option><option value="08AUG24" data-select2-id="select2-data-116-oqka"> 08AUG24</option><option value="01AUG24" data-select2-id="select2-data-117-le7q"> 01AUG24</option><option value="25JUL24" data-select2-id="select2-data-118-jaxh"> 25JUL24</option><option value="18JUL24" data-select2-id="select2-data-119-a0is"> 18JUL24</option><option value="11JUL24" data-select2-id="select2-data-120-cceh"> 11JUL24</option><option value="04JUL24" data-select2-id="select2-data-121-nbry"> 04JUL24</option><option value="27JUN24" data-select2-id="select2-data-122-lnjq"> 27JUN24</option><option value="20JUN24" data-select2-id="select2-data-123-2x4l"> 20JUN24</option><option value="13JUN24" data-select2-id="select2-data-124-ufk1"> 13JUN24</option><option value="06JUN24" data-select2-id="select2-data-125-9j3j"> 06JUN24</option><option value="30MAY24" data-select2-id="select2-data-126-quug"> 30MAY24</option><option value="23MAY24" data-select2-id="select2-data-127-iyb1"> 23MAY24</option><option value="16MAY24" data-select2-id="select2-data-128-pwpt"> 16MAY24</option><option value="09MAY24" data-select2-id="select2-data-129-xoip"> 09MAY24</option><option value="02MAY24" data-select2-id="select2-data-130-2grt"> 02MAY24</option><option value="25APR24" data-select2-id="select2-data-131-i1xr"> 25APR24</option><option value="18APR24" data-select2-id="select2-data-132-e40m"> 18APR24</option><option value="10APR24" data-select2-id="select2-data-133-kbw4"> 10APR24</option><option value="04APR24" data-select2-id="select2-data-134-jwo9"> 04APR24</option><option value="28MAR24" data-select2-id="select2-data-135-hu08"> 28MAR24</option><option value="21MAR24" data-select2-id="select2-data-136-v6kn"> 21MAR24</option><option value="14MAR24" data-select2-id="select2-data-137-i48p"> 14MAR24</option><option value="07MAR24" data-select2-id="select2-data-138-6zwe"> 07MAR24</option><option value="29FEB24" data-select2-id="select2-data-139-v9g1"> 29FEB24</option><option value="22FEB24" data-select2-id="select2-data-140-k1f8"> 22FEB24</option><option value="15FEB24" data-select2-id="select2-data-141-nei0"> 15FEB24</option><option value="08FEB24" data-select2-id="select2-data-142-ud0v"> 08FEB24</option><option value="01FEB24" data-select2-id="select2-data-143-313w"> 01FEB24</option><option value="25JAN24" data-select2-id="select2-data-144-jl9u"> 25JAN24</option><option value="18JAN24" data-select2-id="select2-data-145-xce0"> 18JAN24</option><option value="11JAN24" data-select2-id="select2-data-146-lkjv"> 11JAN24</option><option value="04JAN24" data-select2-id="select2-data-147-mwbh"> 04JAN24</option><option value="28DEC23" data-select2-id="select2-data-148-9o9h"> 28DEC23</option><option value="21DEC23" data-select2-id="select2-data-149-aczc"> 21DEC23</option><option value="14DEC23" data-select2-id="select2-data-150-425y"> 14DEC23</option><option value="07DEC23" data-select2-id="select2-data-151-2lpu"> 07DEC23</option><option value="30NOV23" data-select2-id="select2-data-152-q9v0"> 30NOV23</option><option value="23NOV23" data-select2-id="select2-data-153-qi3j"> 23NOV23</option><option value="16NOV23" data-select2-id="select2-data-154-8n9j"> 16NOV23</option><option value="09NOV23" data-select2-id="select2-data-155-rhc9"> 09NOV23</option><option value="02NOV23" data-select2-id="select2-data-156-xdfg"> 02NOV23</option><option value="26OCT23" data-select2-id="select2-data-157-c45v"> 26OCT23</option><option value="19OCT23" data-select2-id="select2-data-158-9gf2"> 19OCT23</option><option value="12OCT23" data-select2-id="select2-data-159-3e6q"> 12OCT23</option><option value="05OCT23" data-select2-id="select2-data-160-i5rp"> 05OCT23</option><option value="28SEP23" data-select2-id="select2-data-161-993q"> 28SEP23</option><option value="21SEP23" data-select2-id="select2-data-162-pi22"> 21SEP23</option><option value="14SEP23" data-select2-id="select2-data-163-57ky"> 14SEP23</option><option value="07SEP23" data-select2-id="select2-data-164-wqyu"> 07SEP23</option><option value="31AUG23" data-select2-id="select2-data-165-cf53"> 31AUG23</option><option value="24AUG23" data-select2-id="select2-data-166-w12z"> 24AUG23</option><option value="17AUG23" data-select2-id="select2-data-167-ot1a"> 17AUG23</option><option value="10AUG23" data-select2-id="select2-data-168-h92z"> 10AUG23</option><option value="03AUG23" data-select2-id="select2-data-169-588h"> 03AUG23</option><option value="27JUL23" data-select2-id="select2-data-170-ks65"> 27JUL23</option><option value="20JUL23" data-select2-id="select2-data-171-79k0"> 20JUL23</option><option value="13JUL23" data-select2-id="select2-data-172-xucu"> 13JUL23</option><option value="06JUL23" data-select2-id="select2-data-173-8ex7"> 06JUL23</option><option value="28JUN23" data-select2-id="select2-data-174-0u8e"> 28JUN23</option><option value="22JUN23" data-select2-id="select2-data-175-od5v"> 22JUN23</option><option value="15JUN23" data-select2-id="select2-data-176-1fv7"> 15JUN23</option><option value="08JUN23" data-select2-id="select2-data-177-stqq"> 08JUN23</option><option value="01JUN23" data-select2-id="select2-data-178-7vwz"> 01JUN23</option><option value="25MAY23" data-select2-id="select2-data-179-p3xq"> 25MAY23</option><option value="18MAY23" data-select2-id="select2-data-180-rgnx"> 18MAY23</option><option value="11MAY23" data-select2-id="select2-data-181-upx8"> 11MAY23</option><option value="04MAY23" data-select2-id="select2-data-182-zt5e"> 04MAY23</option><option value="27APR23" data-select2-id="select2-data-183-c047"> 27APR23</option><option value="20APR23" data-select2-id="select2-data-184-d0k8"> 20APR23</option><option value="13APR23" data-select2-id="select2-data-185-3icf"> 13APR23</option><option value="06APR23" data-select2-id="select2-data-186-b8wo"> 06APR23</option><option value="29MAR23" data-select2-id="select2-data-187-54ov"> 29MAR23</option><option value="23MAR23" data-select2-id="select2-data-188-aiug"> 23MAR23</option><option value="16MAR23" data-select2-id="select2-data-189-s9kt"> 16MAR23</option><option value="09MAR23" data-select2-id="select2-data-190-bfwi"> 09MAR23</option><option value="02MAR23" data-select2-id="select2-data-191-5iai"> 02MAR23</option><option value="23FEB23" data-select2-id="select2-data-192-0o9y"> 23FEB23</option><option value="16FEB23" data-select2-id="select2-data-193-auwf"> 16FEB23</option><option value="09FEB23" data-select2-id="select2-data-194-983y"> 09FEB23</option><option value="02FEB23" data-select2-id="select2-data-195-063o"> 02FEB23</option><option value="25JAN23" data-select2-id="select2-data-196-g1g8"> 25JAN23</option><option value="19JAN23" data-select2-id="select2-data-197-38ed"> 19JAN23</option><option value="12JAN23" data-select2-id="select2-data-198-ci3i"> 12JAN23</option><option value="05JAN23" data-select2-id="select2-data-199-oszy"> 05JAN23</option><option value="29DEC22" data-select2-id="select2-data-200-pvtx"> 29DEC22</option><option value="22DEC22" data-select2-id="select2-data-201-i404"> 22DEC22</option><option value="15DEC22" data-select2-id="select2-data-202-ghzh"> 15DEC22</option><option value="08DEC22" data-select2-id="select2-data-203-0p11"> 08DEC22</option><option value="01DEC22" data-select2-id="select2-data-204-37pi"> 01DEC22</option><option value="24NOV22" data-select2-id="select2-data-205-aqpa"> 24NOV22</option><option value="17NOV22" data-select2-id="select2-data-206-7mz3"> 17NOV22</option><option value="10NOV22" data-select2-id="select2-data-207-t5pa"> 10NOV22</option><option value="03NOV22" data-select2-id="select2-data-208-mcot"> 03NOV22</option><option value="27OCT22" data-select2-id="select2-data-209-ufmt"> 27OCT22</option><option value="20OCT22" data-select2-id="select2-data-210-835o"> 20OCT22</option><option value="13OCT22" data-select2-id="select2-data-211-l7ed"> 13OCT22</option><option value="06OCT22" data-select2-id="select2-data-212-16rj"> 06OCT22</option><option value="29SEP22" data-select2-id="select2-data-213-zrgo"> 29SEP22</option><option value="22SEP22" data-select2-id="select2-data-214-u9ep"> 22SEP22</option><option value="15SEP22" data-select2-id="select2-data-215-h232"> 15SEP22</option><option value="08SEP22" data-select2-id="select2-data-216-2o4h"> 08SEP22</option><option value="01SEP22" data-select2-id="select2-data-217-b2u0"> 01SEP22</option><option value="25AUG22" data-select2-id="select2-data-218-4ndb"> 25AUG22</option><option value="18AUG22" data-select2-id="select2-data-219-4wgx"> 18AUG22</option><option value="11AUG22" data-select2-id="select2-data-220-64hn"> 11AUG22</option><option value="04AUG22" data-select2-id="select2-data-221-uw75"> 04AUG22</option><option value="28JUL22" data-select2-id="select2-data-222-8196"> 28JUL22</option><option value="21JUL22" data-select2-id="select2-data-223-1jk2"> 21JUL22</option><option value="14JUL22" data-select2-id="select2-data-224-0bb9"> 14JUL22</option><option value="07JUL22" data-select2-id="select2-data-225-2u6x"> 07JUL22</option><option value="30JUN22" data-select2-id="select2-data-226-dzg4"> 30JUN22</option><option value="23JUN22" data-select2-id="select2-data-227-mws5"> 23JUN22</option><option value="16JUN22" data-select2-id="select2-data-228-s2sr"> 16JUN22</option><option value="09JUN22" data-select2-id="select2-data-229-ucl0"> 09JUN22</option><option value="02JUN22" data-select2-id="select2-data-230-eh7t"> 02JUN22</option><option value="26MAY22" data-select2-id="select2-data-231-g7y7"> 26MAY22</option><option value="19MAY22" data-select2-id="select2-data-232-2z4x"> 19MAY22</option><option value="12MAY22" data-select2-id="select2-data-233-jjxq"> 12MAY22</option><option value="05MAY22" data-select2-id="select2-data-234-irhd"> 05MAY22</option><option value="28APR22" data-select2-id="select2-data-235-8tcb"> 28APR22</option><option value="21APR22" data-select2-id="select2-data-236-585m"> 21APR22</option><option value="13APR22" data-select2-id="select2-data-237-r3fz"> 13APR22</option><option value="07APR22" data-select2-id="select2-data-238-bp7g"> 07APR22</option><option value="31MAR22" data-select2-id="select2-data-239-dqaj"> 31MAR22</option><option value="24MAR22" data-select2-id="select2-data-240-e0zu"> 24MAR22</option><option value="17MAR22" data-select2-id="select2-data-241-ww7q"> 17MAR22</option><option value="10MAR22" data-select2-id="select2-data-242-7yen"> 10MAR22</option><option value="03MAR22" data-select2-id="select2-data-243-6y3i"> 03MAR22</option><option value="24FEB22" data-select2-id="select2-data-244-oh8p"> 24FEB22</option><option value="17FEB22" data-select2-id="select2-data-245-jyfo"> 17FEB22</option><option value="10FEB22" data-select2-id="select2-data-246-0q5t"> 10FEB22</option><option value="03FEB22" data-select2-id="select2-data-247-si9i"> 03FEB22</option><option value="27JAN22" data-select2-id="select2-data-248-ubq8"> 27JAN22</option><option value="20JAN22" data-select2-id="select2-data-249-iyge"> 20JAN22</option><option value="13JAN22" data-select2-id="select2-data-250-pey3"> 13JAN22</option><option value="06JAN22" data-select2-id="select2-data-251-jvox"> 06JAN22</option><option value="30DEC21" data-select2-id="select2-data-252-x1ym"> 30DEC21</option><option value="23DEC21" data-select2-id="select2-data-253-ngqe"> 23DEC21</option><option value="16DEC21" data-select2-id="select2-data-254-e2bh"> 16DEC21</option><option value="09DEC21" data-select2-id="select2-data-255-j9te"> 09DEC21</option><option value="02DEC21" data-select2-id="select2-data-256-ikdh"> 02DEC21</option><option value="25NOV21" data-select2-id="select2-data-257-qlp0"> 25NOV21</option><option value="18NOV21" data-select2-id="select2-data-258-7vop"> 18NOV21</option><option value="11NOV21" data-select2-id="select2-data-259-znq1"> 11NOV21</option><option value="03NOV21" data-select2-id="select2-data-260-vxqd"> 03NOV21</option><option value="28OCT21" data-select2-id="select2-data-261-3pmr"> 28OCT21</option><option value="21OCT21" data-select2-id="select2-data-262-hswc"> 21OCT21</option><option value="14OCT21" data-select2-id="select2-data-263-f27a"> 14OCT21</option><option value="07OCT21" data-select2-id="select2-data-264-dw19"> 07OCT21</option><option value="30SEP21" data-select2-id="select2-data-265-wlpj"> 30SEP21</option><option value="23SEP21" data-select2-id="select2-data-266-956m"> 23SEP21</option><option value="16SEP21" data-select2-id="select2-data-267-e060"> 16SEP21</option><option value="09SEP21" data-select2-id="select2-data-268-2fic"> 09SEP21</option><option value="02SEP21" data-select2-id="select2-data-269-fpou"> 02SEP21</option><option value="26AUG21" data-select2-id="select2-data-270-3an3"> 26AUG21</option><option value="18AUG21" data-select2-id="select2-data-271-edrx"> 18AUG21</option><option value="12AUG21" data-select2-id="select2-data-272-lkgy"> 12AUG21</option><option value="05AUG21" data-select2-id="select2-data-273-y5nm"> 05AUG21</option><option value="29JUL21" data-select2-id="select2-data-274-y0sg"> 29JUL21</option><option value="22JUL21" data-select2-id="select2-data-275-pm5i"> 22JUL21</option><option value="15JUL21" data-select2-id="select2-data-276-qas0"> 15JUL21</option><option value="08JUL21" data-select2-id="select2-data-277-wpwe"> 08JUL21</option><option value="01JUL21" data-select2-id="select2-data-278-7vz3"> 01JUL21</option><option value="24JUN21" data-select2-id="select2-data-279-6m21"> 24JUN21</option><option value="17JUN21" data-select2-id="select2-data-280-uprw"> 17JUN21</option><option value="10JUN21" data-select2-id="select2-data-281-ivmw"> 10JUN21</option><option value="03JUN21" data-select2-id="select2-data-282-9hwp"> 03JUN21</option><option value="27MAY21" data-select2-id="select2-data-283-o2h5"> 27MAY21</option><option value="20MAY21" data-select2-id="select2-data-284-8qex"> 20MAY21</option><option value="12MAY21" data-select2-id="select2-data-285-0pvj"> 12MAY21</option><option value="06MAY21" data-select2-id="select2-data-286-3yp9"> 06MAY21</option><option value="29APR21" data-select2-id="select2-data-287-sa9n"> 29APR21</option><option value="22APR21" data-select2-id="select2-data-288-re72"> 22APR21</option><option value="15APR21" data-select2-id="select2-data-289-sd6q"> 15APR21</option><option value="08APR21" data-select2-id="select2-data-290-cp9b"> 08APR21</option><option value="01APR21" data-select2-id="select2-data-291-8oh8"> 01APR21</option><option value="25MAR21" data-select2-id="select2-data-292-eejr"> 25MAR21</option><option value="18MAR21" data-select2-id="select2-data-293-59ck"> 18MAR21</option><option value="10MAR21" data-select2-id="select2-data-294-pk9d"> 10MAR21</option><option value="04MAR21" data-select2-id="select2-data-295-9yyv"> 04MAR21</option><option value="25FEB21" data-select2-id="select2-data-296-qzqd"> 25FEB21</option><option value="18FEB21" data-select2-id="select2-data-297-rrdk"> 18FEB21</option><option value="11FEB21" data-select2-id="select2-data-298-z5n3"> 11FEB21</option><option value="04FEB21" data-select2-id="select2-data-299-toi8"> 04FEB21</option><option value="28JAN21" data-select2-id="select2-data-300-j4xl"> 28JAN21</option><option value="21JAN21" data-select2-id="select2-data-301-dafn"> 21JAN21</option><option value="14JAN21" data-select2-id="select2-data-302-i1j9"> 14JAN21</option><option value="07JAN21" data-select2-id="select2-data-303-ug5w"> 07JAN21</option><option value="31DEC20" data-select2-id="select2-data-304-dunx"> 31DEC20</option><option value="24DEC20" data-select2-id="select2-data-305-56jy"> 24DEC20</option><option value="17DEC20" data-select2-id="select2-data-306-m667"> 17DEC20</option><option value="10DEC20" data-select2-id="select2-data-307-tp35"> 10DEC20</option><option value="03DEC20" data-select2-id="select2-data-308-b3k3"> 03DEC20</option><option value="26NOV20" data-select2-id="select2-data-309-3bi3"> 26NOV20</option><option value="19NOV20" data-select2-id="select2-data-310-8miu"> 19NOV20</option><option value="12NOV20" data-select2-id="select2-data-311-uvrb"> 12NOV20</option><option value="05NOV20" data-select2-id="select2-data-312-62rr"> 05NOV20</option><option value="29OCT20" data-select2-id="select2-data-313-h7oj"> 29OCT20</option><option value="22OCT20" data-select2-id="select2-data-314-cfmp"> 22OCT20</option><option value="15OCT20" data-select2-id="select2-data-315-ohz3"> 15OCT20</option><option value="08OCT20" data-select2-id="select2-data-316-oxvc"> 08OCT20</option><option value="01OCT20" data-select2-id="select2-data-317-0muu"> 01OCT20</option><option value="24SEP20" data-select2-id="select2-data-318-s9xq"> 24SEP20</option><option value="17SEP20" data-select2-id="select2-data-319-jjcp"> 17SEP20</option><option value="10SEP20" data-select2-id="select2-data-320-a9yr"> 10SEP20</option><option value="03SEP20" data-select2-id="select2-data-321-wsan"> 03SEP20</option><option value="27AUG20" data-select2-id="select2-data-322-gukx"> 27AUG20</option><option value="20AUG20" data-select2-id="select2-data-323-s0in"> 20AUG20</option><option value="13AUG20" data-select2-id="select2-data-324-51bc"> 13AUG20</option><option value="06AUG20" data-select2-id="select2-data-325-zr68"> 06AUG20</option><option value="30JUL20" data-select2-id="select2-data-326-otjn"> 30JUL20</option><option value="23JUL20" data-select2-id="select2-data-327-fyll"> 23JUL20</option><option value="16JUL20" data-select2-id="select2-data-328-zgqy"> 16JUL20</option><option value="09JUL20" data-select2-id="select2-data-329-ablg"> 09JUL20</option><option value="02JUL20" data-select2-id="select2-data-330-zx15"> 02JUL20</option><option value="25JUN20" data-select2-id="select2-data-331-pt1o"> 25JUN20</option><option value="18JUN20" data-select2-id="select2-data-332-qjbj"> 18JUN20</option><option value="11JUN20" data-select2-id="select2-data-333-x0ak"> 11JUN20</option><option value="04JUN20" data-select2-id="select2-data-334-mvku"> 04JUN20</option><option value="28MAY20" data-select2-id="select2-data-335-4842"> 28MAY20</option><option value="21MAY20" data-select2-id="select2-data-336-doyp"> 21MAY20</option><option value="14MAY20" data-select2-id="select2-data-337-myp0"> 14MAY20</option><option value="07MAY20" data-select2-id="select2-data-338-ckpw"> 07MAY20</option><option value="30APR20" data-select2-id="select2-data-339-fxit"> 30APR20</option><option value="23APR20" data-select2-id="select2-data-340-kzwf"> 23APR20</option><option value="16APR20" data-select2-id="select2-data-341-d0jw"> 16APR20</option><option value="09APR20" data-select2-id="select2-data-342-s3s7"> 09APR20</option><option value="01APR20" data-select2-id="select2-data-343-0a65"> 01APR20</option><option value="26MAR20" data-select2-id="select2-data-344-oyba"> 26MAR20</option><option value="19MAR20" data-select2-id="select2-data-345-g8i8"> 19MAR20</option><option value="12MAR20" data-select2-id="select2-data-346-83ga"> 12MAR20</option><option value="05MAR20" data-select2-id="select2-data-347-himn"> 05MAR20</option><option value="27FEB20" data-select2-id="select2-data-348-8cni"> 27FEB20</option><option value="20FEB20" data-select2-id="select2-data-349-ta89"> 20FEB20</option><option value="13FEB20" data-select2-id="select2-data-350-7zre"> 13FEB20</option><option value="06FEB20" data-select2-id="select2-data-351-br16"> 06FEB20</option><option value="30JAN20" data-select2-id="select2-data-352-lodi"> 30JAN20</option><option value="23JAN20" data-select2-id="select2-data-353-hpk8"> 23JAN20</option><option value="16JAN20" data-select2-id="select2-data-354-ucx6"> 16JAN20</option><option value="09JAN20" data-select2-id="select2-data-355-hglv"> 09JAN20</option><option value="02JAN20" data-select2-id="select2-data-356-i573"> 02JAN20</option><option value="26DEC19" data-select2-id="select2-data-357-n5ne"> 26DEC19</option><option value="19DEC19" data-select2-id="select2-data-358-q5c9"> 19DEC19</option><option value="12DEC19" data-select2-id="select2-data-359-4tu7"> 12DEC19</option><option value="05DEC19" data-select2-id="select2-data-360-p7wl"> 05DEC19</option><option value="28NOV19" data-select2-id="select2-data-361-1ncj"> 28NOV19</option><option value="21NOV19" data-select2-id="select2-data-362-5c7w"> 21NOV19</option><option value="14NOV19" data-select2-id="select2-data-363-5z6p"> 14NOV19</option><option value="07NOV19" data-select2-id="select2-data-364-1toy"> 07NOV19</option><option value="31OCT19" data-select2-id="select2-data-365-5a4d"> 31OCT19</option><option value="24OCT19" data-select2-id="select2-data-366-fmad"> 24OCT19</option><option value="17OCT19" data-select2-id="select2-data-367-fhtk"> 17OCT19</option><option value="10OCT19" data-select2-id="select2-data-368-3sqk"> 10OCT19</option><option value="03OCT19" data-select2-id="select2-data-369-k5kn"> 03OCT19</option><option value="26SEP19" data-select2-id="select2-data-370-qgc4"> 26SEP19</option><option value="19SEP19" data-select2-id="select2-data-371-mthw"> 19SEP19</option><option value="12SEP19" data-select2-id="select2-data-372-l44i"> 12SEP19</option><option value="05SEP19" data-select2-id="select2-data-373-2m1o"> 05SEP19</option><option value="29AUG19" data-select2-id="select2-data-374-m6qt"> 29AUG19</option><option value="22AUG19" data-select2-id="select2-data-375-i8ap"> 22AUG19</option><option value="14AUG19" data-select2-id="select2-data-376-bk2f"> 14AUG19</option><option value="08AUG19" data-select2-id="select2-data-377-dfgc"> 08AUG19</option><option value="01AUG19" data-select2-id="select2-data-378-lgls"> 01AUG19</option><option value="25JUL19" data-select2-id="select2-data-379-w7uh"> 25JUL19</option><option value="18JUL19" data-select2-id="select2-data-380-ztgv"> 18JUL19</option><option value="11JUL19" data-select2-id="select2-data-381-rhok"> 11JUL19</option><option value="04JUL19" data-select2-id="select2-data-382-pixr"> 04JUL19</option><option value="27JUN19" data-select2-id="select2-data-383-fc5g"> 27JUN19</option><option value="20JUN19" data-select2-id="select2-data-384-peym"> 20JUN19</option><option value="13JUN19" data-select2-id="select2-data-385-u56c"> 13JUN19</option><option value="06JUN19" data-select2-id="select2-data-386-vymk"> 06JUN19</option><option value="30MAY19" data-select2-id="select2-data-387-vfuk"> 30MAY19</option><option value="23MAY19" data-select2-id="select2-data-388-415k"> 23MAY19</option><option value="16MAY19" data-select2-id="select2-data-389-eggb"> 16MAY19</option><option value="09MAY19" data-select2-id="select2-data-390-zlpo"> 09MAY19</option><option value="02MAY19" data-select2-id="select2-data-391-9coa"> 02MAY19</option><option value="25APR19" data-select2-id="select2-data-392-tgka"> 25APR19</option><option value="18APR19" data-select2-id="select2-data-393-3lg1"> 18APR19</option><option value="11APR19" data-select2-id="select2-data-394-vgy6"> 11APR19</option><option value="04APR19" data-select2-id="select2-data-395-waht"> 04APR19</option><option value="28MAR19" data-select2-id="select2-data-396-h8cs"> 28MAR19</option><option value="20MAR19" data-select2-id="select2-data-397-ed09"> 20MAR19</option><option value="14MAR19" data-select2-id="select2-data-398-2329"> 14MAR19</option><option value="07MAR19" data-select2-id="select2-data-399-7b9t"> 07MAR19</option><option value="28FEB19" data-select2-id="select2-data-400-5psr"> 28FEB19</option><option value="21FEB19" data-select2-id="select2-data-401-80ar"> 21FEB19</option><option value="14FEB19" data-select2-id="select2-data-402-46c1"> 14FEB19</option><option value="31JAN19" data-select2-id="select2-data-403-g6tk"> 31JAN19</option><option value="27DEC18" data-select2-id="select2-data-404-a6t3"> 27DEC18</option><option value="29NOV18" data-select2-id="select2-data-405-570r"> 29NOV18</option><option value="25OCT18" data-select2-id="select2-data-406-fw1d"> 25OCT18</option><option value="27SEP18" data-select2-id="select2-data-407-xkdx"> 27SEP18</option><option value="30AUG18" data-select2-id="select2-data-408-jl1r"> 30AUG18</option>				</select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="select2-data-7-k6kj" style="width: 100px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-optExpDate_hist-container" aria-controls="select2-optExpDate_hist-container"><span class="select2-selection__rendered" id="select2-optExpDate_hist-container" role="textbox" aria-readonly="true" title=" 27JAN26"> 27JAN26</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+			</div>
+
+
+
+			
+
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" style="width:40px;" data-upgraded=",MaterialTextfield">
+			<label class="mdl-textfield__label" for="optQty">Lots</label>
+			<input class="mdl-textfield__input" name="optQty" id="optQty" type="text" size="1" maxlength="3" max="999" value="1" onkeypress="return isNumber(event)" onkeyup="getQuantityDetails()">
+		</div>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select is-dirty is-upgraded" style="width:90px" data-upgraded=",MaterialTextfield">
+
+				<label for="optCallStrike_hist" class="mdl-textfield__label">Call Strike</label>
+				<select id="optCallStrike_hist" name="optCallStrike_hist" class="mdl-textfield__input select2-hidden-accessible" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-optCallStrike_hist"><option value="0"> Call Strike</option><option value="23450">23450</option><option value="23500">23500</option><option value="23550">23550</option><option value="23650">23650</option><option value="23700">23700</option><option value="23750">23750</option><option value="23800">23800</option><option value="23850">23850</option><option value="23900">23900</option><option value="23950">23950</option><option value="24000">24000</option><option value="24050">24050</option><option value="24100">24100</option><option value="24150">24150</option><option value="24200">24200</option><option value="24250">24250</option><option value="24300">24300</option><option value="24350">24350</option><option value="24400">24400</option><option value="24450">24450</option><option value="24500">24500</option><option value="24550">24550</option><option value="24600">24600</option><option value="24650">24650</option><option value="24700">24700</option><option value="24750">24750</option><option value="24800">24800</option><option value="24850">24850</option><option value="24900">24900</option><option value="24950">24950</option><option value="25000">25000</option><option value="25050">25050</option><option value="25100">25100</option><option value="25150">25150</option><option value="25200" data-select2-id="select2-data-504-kbgs">25200</option><option value="25250">25250</option><option value="25300">25300</option><option value="25350">25350</option><option value="25400">25400</option><option value="25450">25450</option><option value="25500">25500</option><option value="25550">25550</option><option value="25600">25600</option><option value="25650">25650</option><option value="25700">25700</option><option value="25750">25750</option><option value="25800">25800</option><option value="25850">25850</option><option value="25900">25900</option><option value="25950">25950</option><option value="26000">26000</option><option value="26050">26050</option><option value="26100">26100</option><option value="26150">26150</option><option value="26200">26200</option><option value="26250">26250</option><option value="26300">26300</option><option value="26350">26350</option><option value="26400">26400</option><option value="26450">26450</option><option value="26500">26500</option><option value="26550">26550</option><option value="26600">26600</option><option value="26650">26650</option><option value="26700">26700</option><option value="26750">26750</option><option value="26800">26800</option><option value="26850">26850</option><option value="26900">26900</option><option value="26950">26950</option><option value="27000">27000</option><option value="27050">27050</option><option value="27100">27100</option><option value="27150">27150</option><option value="27200">27200</option><option value="27250">27250</option><option value="27300">27300</option><option value="27350">27350</option><option value="27400">27400</option><option value="27450">27450</option><option value="27500">27500</option><option value="27550">27550</option><option value="27600">27600</option><option value="27650">27650</option><option value="27700">27700</option><option value="27750">27750</option><option value="27800">27800</option><option value="27850">27850</option><option value="27900">27900</option><option value="27950">27950</option><option value="28000">28000</option><option value="28050">28050</option><option value="28100">28100</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-503-cbiu" style="width: 90px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-optCallStrike_hist-container" aria-controls="select2-optCallStrike_hist-container"><span class="select2-selection__rendered" id="select2-optCallStrike_hist-container" role="textbox" aria-readonly="true" title="25200">25200</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+			</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" style="width:40px;" data-upgraded=",MaterialTextfield">
+			<label class="mdl-textfield__label" for="optQty2">Lots</label>
+			<input class="mdl-textfield__input" name="optQty2" id="optQty2" type="text" size="1" maxlength="3" max="999" value="1" onkeypress="return isNumber(event)" onkeyup="getQuantityDetails()">
+		</div>
+				
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select is-dirty is-upgraded" style="width:90px" data-upgraded=",MaterialTextfield">
+				<label for="optPutStrike_hist" class="mdl-textfield__label">Put Strike</label>
+				<select id="optPutStrike_hist" name="optPutStrike_hist" class="mdl-textfield__input select2-hidden-accessible" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-optPutStrike_hist"><option value="0">Put Strike</option><option value="23300">23300</option><option value="23350">23350</option><option value="23400">23400</option><option value="23450">23450</option><option value="23500">23500</option><option value="23550">23550</option><option value="23600">23600</option><option value="23650">23650</option><option value="23700">23700</option><option value="23750">23750</option><option value="23800">23800</option><option value="23850">23850</option><option value="23900">23900</option><option value="23950">23950</option><option value="24000">24000</option><option value="24050">24050</option><option value="24100">24100</option><option value="24150">24150</option><option value="24200">24200</option><option value="24250">24250</option><option value="24300">24300</option><option value="24350">24350</option><option value="24400">24400</option><option value="24450">24450</option><option value="24500">24500</option><option value="24550">24550</option><option value="24600">24600</option><option value="24650">24650</option><option value="24700">24700</option><option value="24750">24750</option><option value="24800">24800</option><option value="24850">24850</option><option value="24900">24900</option><option value="24950">24950</option><option value="25000">25000</option><option value="25050">25050</option><option value="25100">25100</option><option value="25150">25150</option><option value="25200" data-select2-id="select2-data-604-0at5">25200</option><option value="25250">25250</option><option value="25300">25300</option><option value="25350">25350</option><option value="25400">25400</option><option value="25450">25450</option><option value="25500">25500</option><option value="25550">25550</option><option value="25600">25600</option><option value="25650">25650</option><option value="25700">25700</option><option value="25750">25750</option><option value="25800">25800</option><option value="25850">25850</option><option value="25900">25900</option><option value="25950">25950</option><option value="26000">26000</option><option value="26050">26050</option><option value="26100">26100</option><option value="26150">26150</option><option value="26200">26200</option><option value="26250">26250</option><option value="26300">26300</option><option value="26350">26350</option><option value="26400">26400</option><option value="26450">26450</option><option value="26500">26500</option><option value="26550">26550</option><option value="26600">26600</option><option value="26650">26650</option><option value="26700">26700</option><option value="26750">26750</option><option value="26800">26800</option><option value="26850">26850</option><option value="26900">26900</option><option value="26950">26950</option><option value="27000">27000</option><option value="27050">27050</option><option value="27100">27100</option><option value="27150">27150</option><option value="27200">27200</option><option value="27250">27250</option><option value="27300">27300</option><option value="27350">27350</option><option value="27400">27400</option><option value="27450">27450</option><option value="27500">27500</option><option value="27550">27550</option><option value="27600">27600</option><option value="27650">27650</option><option value="27700">27700</option><option value="27750">27750</option><option value="27800">27800</option><option value="27850">27850</option><option value="27900">27900</option><option value="27950">27950</option><option value="28000">28000</option><option value="28050">28050</option><option value="28100">28100</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-603-4iwn" style="width: 90px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-optPutStrike_hist-container" aria-controls="select2-optPutStrike_hist-container"><span class="select2-selection__rendered" id="select2-optPutStrike_hist-container" role="textbox" aria-readonly="true" title="25200">25200</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+			</div>
+
+					
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder is-dirty is-upgraded" style="width:130px;" hidden="" data-upgraded=",MaterialTextfield">
+				<!-- <input class="mdl-textfield__input" type="date" id="txtDate" name = "txtDate" placeholder="" value="2026-02-01" min="2018-08-02" max=""/>-->
+				<input class="mdl-textfield__input" type="date" id="txtDate" name="txtDate" placeholder="" value="2026-02-01" min="2018-08-02" max="">
+				<label class="mdl-textfield__label" for="txtDate">Select Date</label>
+			</div>
+
+			
+		<button name="btnSubmit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--ripple-effect mdl-js-ripple-effect smallbutton" type="button" id="submitDetails" onclick="myFunction()" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-ripple is-animating" style="width: 262.906px; height: 262.906px; transform: translate(-50%, -50%) translate(46px, 18px);"></span>Show Chart<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+		<!-- <button name='btnSubmit'class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--ripple-effect mdl-js-ripple-effect smallbutton" type="button" id="submitDetails"><span class="mdl-ripple"></span>Show Chart</button>	 -->
+
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select is-dirty is-upgraded" style="width:90px; margin-left:10px;" data-upgraded=",MaterialTextfield">
+			<label for="noOfChartsStraddle" class="mdl-textfield__label">No Of Charts</label>
+			<select id="noOfChartsStraddle" name="noOfChartsStraddle" class="mdl-textfield__input" onchange="changeNumberOfChartsStraddle(this, 'straddle')" style="background: white;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+		</div>
+
+		<!-- <button name='btnSubmit'class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--ripple-effect mdl-js-ripple-effect smallbutton" type="submit"><span class="mdl-ripple"></span>Show Chart</button>		 -->
+
+		<!-- 
+  <button id='show-dialog' type='button' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent smallbutton'>Save Strategy</button>
+  <dialog class='mdl-dialog' id='dialog1'>
+	<p class='mdl-dialog__title'>Save Strategy</p>
+	
+	<div class='mdl-dialog__content'>
+	  <p>
+		Please Enter Strategy Name
+	  </p>
+	  <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label has-placeholder' style='width:200px'>
+		<input type='text' pattern=".{1,}" name='SaveStrategy' id='strategy_name' value=''  placeholder="Strategy Name" maxlength=50 size=20 class='mdl-textfield__input' style='padding-top:0px' autocomplete='off'>
+
+   <span class = "strategy_name_error"></span>
+	
+	</div>
+	 <span id='SaveStraterytxt' style='color:ForestGreen;font-size: 12px;' ></span>
+	</div>
+	<div class='mdl-dialog__actions'>
+	  <button type='button' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent smallbutton save'>save</button>
+	<button type='button' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent smallbutton savestrategyclose'>Close</button>
+	</div>
+  </dialog>
+  <button id='show-dialog2' type='button' class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent smallbutton'>Load Strategy</button>
+  <dialog class='mdl-dialog' id='dialog2'>
+	<h4 class='mdl-dialog__title'>Load Strategy</h4>
+	<div class='mdl-dialog__content'>
+	  <span>
+	   Please Select a Saved Strategy 
+	  </span>
+	  
+	  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select" style='width:200px'>
+<select id='strategy_names_dw' name='strategy_names_dw'  onChange='' class="mdl-textfield__input" > -->
+
+			
+            <script>
+                var symbolFile='/opt/hcharts/stx8req/data/symbolsOptionStrategy.json';
+                // var symbolFile='hcharts/stx8req/data/symbolsOptionStrategy.json';
+                var toolbarFileName = 'ToolbarOptStrat_m.html';
+                var firstLoad = true;
+                var defaultPrdTxt = '1';
+                var defaultTemplateID = '99';
+                var sid = 'vaeivu938o473n5e741ummbgri';
+                var defaultSym = 'NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26';
+                var q1 = '1';
+                var q2 = '1';
+            </script>
+            
+            <script>
+                var symbolName='';
+                var userName='arung';
+                var myTimout;
+                var version='8';
+            </script>
+            
+
+		
+		<span class="right_side">
+			<div class="mobile"></div>
+			<div class="desktop"></div>
+			<span class="futdata" id="FuturesData" style="font-size:12px;"><div><span>NIFTY-27JAN26</span><span><span style="font-weight:bold" title="NIFTY-27JAN26 Price ">  25178.20</span><span style="font-weight:bold"><i class="material-icons md-24" style="color:#F44336">arrow_drop_down</i></span><span style="font-weight:bold" title="NIFTY-27JAN26 Price Chg ">-81.00</span><span title="NIFTY-27JAN26 Price Chg Percent" style="color:#F44336"> (<b>-0.32%</b>)</span></span><span title="As on 21-Jan-2026 EOD"> (21-Jan-2026 EOD)</span>&nbsp;&nbsp;</div></span>
+			<span class="futdata" id="SpotPriceData" style="font-size:12px;"><div><span> Fair Price </span><span style="font-weight:bold">25188.70</span><span><i class="material-icons  md-24" style="color:#F44336">arrow_drop_down</i></span><span style="font-weight:bold">-75.70</span><span style="color:#F44336"> (<b>-0.30%</b>)</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>Lot Size </span><span style="font-weight:bold">65</span>&nbsp;&nbsp;</div></span>
+			<span class="futdata" id="IVIVRIVPMPPCRData" style="font-size:12px;"><div><span>IV: </span><span style="font-weight:bold">11.51</span>&nbsp;&nbsp;<span>IVR: </span><span style="font-weight:bold">22.53</span>&nbsp;&nbsp;<span>IVP: </span><span style="font-weight:bold">53.01</span>&nbsp;&nbsp;<span>Max Pain: </span><span style="font-weight:bold">25350</span>&nbsp;&nbsp;<span>PCR: </span><span style="font-weight:bold">0.67</span></div></span>
+		</span>
+		<div class="mobile">
+			<p></p>
+		</div>
+
+
+		<input name="expiry" id="expiry" type="hidden" value="">
+		<input name="close" id="close" type="hidden" value="">
+		<input name="close_chg" id="close_chg" type="hidden" value="">
+		<input name="close_chg_percent" id="close_chg_percent" type="hidden" value="">
+		<input name="lastupdated" id="lastupdated" type="hidden" value="">
+		<input name="defaultDate" id="defaultDate" type="hidden" value="2026-02-02">
+		<input name="SymbType" id="SymbType" type="hidden" value="FNO">
+				<script src="/opt/js/Customjs_Curr_v12.js?v=6.1.1"></script>
+
+		<!--updated for dropdown with arrow keys to work and removed fSelect for dropdown and set to select2 lib-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" integrity="sha512-aD9ophpFQ61nFZP6hXYu4Q/b/USW7rpLCQLX6Bi0WJHXNO7Js/fUENpBQf/+P4NtpzNX0jSgR5zVvPOJp+W2Kg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js" integrity="sha512-4MvcHwcbqXKUHB6Lx3Zb5CEAVoE9u84qN+ZSMM6s7z8IeJriExrV3ND5zRze9mxNlABJ6k864P/Vl8m0Sd3DtQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+	</form>
+
+
+	<input name="userName" id="userName" type="hidden" value="arung">
+	<input name="sid" id="sid" type="hidden" value="vaeivu938o473n5e741ummbgri">
+	<input name="program_name" id="program_name" type="hidden" value="StraddleCharts.php">
+	<input name="last_watchlist_id" id="last_watchlist_id" type="hidden" value="">
+	<input name="last_watchlist_name" id="last_watchlist_name" type="hidden" value="">
+	<input name="default_option_type" id="default_option_type" type="hidden" value="">
+	<input name="default_expiry_date" id="default_expiry_date" type="hidden" value="">
+	<script type="text/javascript">
+
+
+		function getTemplateNames(defaultVal) {
+			var defaultValName = '';
+			if (defaultVal === undefined) defaultVal = 0;
+			$.post('/opt/hcharts/stx8req/php/getTemplateNames.php', { un: userName }, function (data) {
+				// console.log('data=', data);
+				var options = '';
+				for (var x = 0; x < data.length; x++) {
+					var templID = data[x]['id'];
+					var templName = data[x]['name'];
+					options += '<option value="' + templID + '">' + templName + '</option>';
+
+					if (defaultVal == templID) defaultValName = templName;
+				}
+				// console.log('options=', options);
+				var optionsSave = '<option value="0"> Select</option>' + options;
+				var optionsLoad = '<option value="0"> Select</option>';
+				// optionsLoad += '<option value="99" style="color:#0086BA;font-weight:bold;">iCharts Template</option>' + options;
+				optionsLoad += options;
+				$('#optTempID').html(optionsSave);
+				$('#optTempLoadID').html(optionsLoad);
+				// && defaultVal != 99
+				if (defaultVal != 0) {
+					$('#optTempLoadID').val(defaultVal);
+					$("#txtTempNameID").val(defaultValName);
+				}
+				if (defaultVal == 99) $("#txtTempNameID").attr("disabled", "disabled");
+
+			}, 'json');
+		}
+
+		var loadvalue = 0;
+		var mode = "INTRA";
+		var timeframe = '1';
+		var default_histdate = "2026-02-01";
+		var q1 = document.getElementById("optQty").value;
+		var q2 = document.getElementById("optQty2").value;
+		//added
+		q1Temp = q1;
+		q2Temp = q2;
+		var Presentday = $("#Presentday").val();
+		var Prevday = $("#Prevday").val();
+		// var montlyexpdate="";
+		var montlyexpdate = $("#expiry").val();
+		var expDate;
+		var selectedsymbol = $("#optSymbol").val();
+		var selectedexpiry = $("#expiry").val();
+		var FutureSymbol = selectedsymbol + '-' + selectedexpiry;
+		var ClosingPrice = $("#close").val();
+		var close_chg = $("#close_chg").val();
+		var close_chg_percent = $("#close_chg_percent").val();
+		var lastupdated = $("#lastupdated").val();
+		var rdDataType = 'hist';
+		var sel_strategy_names_dw = '';
+		var u = 'arung';
+		var SymbType = $("#SymbType").val();
+		var sid = 'vaeivu938o473n5e741ummbgri';
+		var optExpDateval;
+		var optCallStrVal;
+		var optPutStrVal;
+		var expDateVal;
+		var returnVal;
+		var details = getSymbolDetails();
+		var symbolTemp = details[0];
+
+		if (rdDataType == 'latest') {
+			optExpDateval = "03FEB26";
+		}
+		else {
+			optExpDateval = $('#optExpDate_hist').val();
+		}
+		var finaldate = $('#txtDate').val();
+		if (rdDataType == 'latest') {
+			optExpDateval = $('#optExpDate').val();
+			getLatestPriceInfo_eod();
+			getLatestSpotPrice_Spot(optExpDateval);
+			get_Latest_IV_IVR_IVP_MaxPain_PCR(optExpDateval);
+
+		}
+		else {
+			optExpDateval = $('#optExpDate_hist').val();
+			getHistoricalSpotPrice(optExpDateval);
+			get_Hist_IV_IVR_IVP_MaxPain_PCR(optExpDateval)
+			getHistPriceInfo()
+		}
+
+
+		var form = document.getElementById("frm1");
+		document.getElementById("hist").addEventListener("click", function () {
+			// $('#optExpDate').empty();
+			form.submit();
+		});
+
+		document.getElementById("latest").addEventListener("click", function () {
+			// $('#optExpDate').empty();
+			form.submit();
+		});
+
+		// var calculate = document.getElementById("submitDetails").addEventListener("click", function () {
+		// 	var details = getSymbolDetails();
+		// 	symbol = details[0];
+		// 	// console.log("Symbol: ", symbol);
+		// 	var quantityDetails = getQuantityDetails();
+		// 	q1 = quantityDetails[0];
+		// 	q2 = quantityDetails[1];
+		// 	console.log("Quantity 1: ", q1);
+		// 	console.log("Quantity 2: ", q2);
+		//     // Call manipulateInputs when the button is clicked
+		// 	if (symbolTemp == symbol && q1 == 1 && q2 == 1) {
+		// 		console.log("Inside");
+		// 	} else {
+		// 		console.log("Outside");
+		// 		symbolTemp = symbol;
+		//     	manipulateInputs(symbol);
+		// 	}
+		// });
+
+		function myFunction() {
+			// console.log("Symbol: ", symbolTemp);
+			var details = getSymbolDetails();
+			symbol = details[0];
+			// console.log("Symbol: ", symbol);
+			var quantityDetails = getQuantityDetails();
+			q1 = quantityDetails[0];
+			q2 = quantityDetails[1];
+			symbol = symbol + "+" + q1 + "+" + q2;
+			// Call manipulateInputs when the button is clicked
+			if (symbolTemp != symbol || q1 != 1 || q2 != 1) {
+				symbolTemp = symbol;
+				manipulateInputs(symbol, q1, q2);
+			}
+			// } else {
+			// 	symbolTemp = symbol;
+			// 	manipulateInputs(symbol);
+			// }
+		}
+
+		// function manipulateInputs(symbol) {
+		// 	chartNumber = document
+		// 		.getElementById("noOfCharts").value;
+		// 	console.log("Symbol: ", chartNumber);
+		// 	// Manipulate inputs here
+		// 	if (window.tvWidget1) {
+		// 		window.tvWidget1.onChartReady(function () {
+		// 			window.tvWidget1.setSymbol(symbol, '1');
+		// 		});
+		// 	}
+		// }
+
+
+		function getQuantityDetails() {
+			var q1 = document.getElementById("optQty").value;
+			var q2 = document.getElementById("optQty2").value;
+			if (q1 > 1 || q2 > 1) {
+				return [q1, q2];
+			} else {
+				return [1, 1];
+			}
+		}
+
+
+
+		function getSymbolDetails() {
+			if (rdDataType == 'hist') {
+				var expiryDate = document.getElementById("optExpDate_hist").value;
+				var callStrike = document.getElementById("optCallStrike_hist").value;
+				var putStrike = document.getElementById("optPutStrike_hist").value;
+				var txnDate = document.getElementById("txtDate").value;
+				// console.log("Expiry Date History: ", expiryDate);
+				// console.log("Call Strike History: ", callStrike);
+				// console.log("Put Strike History: ", putStrike);
+				// console.log("TXN Date: ", txnDate);
+			} else {
+				var expiryDate = document.getElementById("optExpDate").value;
+				var callStrike = document.getElementById("optCallStrike").value;
+				var putStrike = document.getElementById("optPutStrike").value;
+				// console.log("Expiry date latest: ", expiryDate);
+				// console.log("Call Strike latest: ", callStrike);
+				// console.log("Put Strike Latest: ", putStrike);
+			}
+			var optSymbol = document.getElementById("optSymbol").value;
+			var q1 = document.getElementById("optQty").value;
+			var q2 = document.getElementById("optQty2").value;
+			symbol = optSymbol + "-" + callStrike + "C-" + expiryDate + ":" + optSymbol + "-" + putStrike + "P-" + expiryDate;
+			// console.log("Default Symbol: ", 'NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26');
+			// console.log("Opt Symbol global: ", optSymbol);
+			// console.log("Q1 Global: ", q1);
+			// console.log("Q2 Global: ", q2);
+			// console.log("Symbol: ", symbol);
+			return [symbol, q1, q2];
+		}
+
+		// var button = document.getElementById("submitDetails");
+		// button.addEventListener("click", function() {
+		// 	if(isAllValuesSelected() == false) {
+		// 		return;
+		// 	}
+		// 	var details = getSymbolDetails();
+		// 	symbol = details[0];
+		// 	var quantityDetails = getQuantityDetails();
+		// 	q1 = quantityDetails[0];
+		// 	q2 = quantityDetails[1];
+		// 	// console.log("Quantity 1: ", q1);
+		// 	// console.log("Quantity 2: ", q2);
+		// 	// console.log(q1 == q1Temp);
+		// 	// console.log(q2 == q2Temp);
+		// 	// console.log(q2, q2Temp);
+		// 	if (symbolTemp == symbol && q1 == q1Temp && q2 == q2Temp) {
+		// 		// console.log("Inside");
+		// 		return;
+		// 	} else {
+		// 		// tvWidget.chart().setSymbol('NIFTY-18950C-06JUL23:NIFTY-18950P-06JUL23')
+		// 		// console.log("Temp Sym: ", symbolTemp);
+		// 		// console.log("SYmbol Name: ", symbol);
+		// 		// console.log("Outside");
+		// 		// symbolTemp = symbol;
+		// 		// q1Temp = q1; 
+		// 		// q2Temp = q2;
+		// 		// console.log("Q1 Temp: ", q1Temp);
+		// 		// console.log("Q2 Temp: ", q2Temp);
+		// 		// console.log("Q1: ", q1);
+		// 		// console.log("Q2: ", q2);
+		// 		// tempq1 = q1;
+		// 		// tempq2 = q2;
+		// 		// setInterval(() => {
+		// 		// 	manipulateInputs(symbol);
+		// 		// }, 10000);
+		// 		// manipulateInputs(symbol); 
+		// 		change(symbol);
+		// 		// console.log("Symbol: ", tvWidget);
+		// 	}
+		// 	symbolTemp = symbol;
+		// 	q1Temp = q1; 
+		// 	q2Temp = q2;
+		//     event.preventDefault();
+		// });
+
+		// function change(symbol) {
+		// 	window.tvnew = new TradingView.widget({
+		// 			symbol:symbol,
+		// 	        timezone: "Asia/Kolkata",
+		// 			interval: "1",
+		// 	        container: "tv_chart_container",
+		// 	        datafeed: new Datafeeds.UDFCompatibleDatafeed(" "),
+		// 	        library_path: "charting_library-master/charting_library/",
+		// 	        locale: getParameterByName("lang") || "en",
+		// 	        disabled_features: ["save_chart_properties_to_local_storage", "chart_crosshair_menu", "order_panel", "trading_account_manager", "items_favoriting", "show_object_tree", "fix_left_edge", "header_symbol_search", "header_layouttoggle", "header_compare", "symbol_search_hot_key", "add_to_watchlist"],
+		// 	        widgetbar: {
+		// 	            details: !0,
+		// 				datawindow: !0,
+		// 	            watchlist: !0,
+		// 	            watchlist_settings: {
+		// 	                default_symbols: ['NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26']
+		// 					// default_symbols:[symbol]
+		// 	            }
+		// 	        },
+		// 	        autosize: !0,
+		// 	        enabled_features: ["study_templates", "header_screenshot", "side_toolbar_in_fullscreen_mode"],
+		// 	        theme: getThemeName(localStorage.getItem("isDarkMode")),
+		// 	        intraday_multipliers: ["1", "5"],
+		// 	        overrides: {
+		// 			    "mainSeriesProperties.style": 2, // Set default chart type as line (0)
+		// 				"mainSeriesProperties.lineStyle.linewidth": 1,
+		// 				"mainSeriesProperties.lineStyle.color": "#000000"
+		// 			},
+		// 	        save_load_adapter: {
+		// 	            charts: [],
+		// 	            studyTemplates: [],
+		// 	            drawingTemplates: [],
+		// 	            getAllCharts: function() {
+		// 	                return Promise.resolve(getTradingView_All(userName, prog_name))
+		// 	            },
+		// 	            removeChart: function(a) {
+		// 	                var b = deleteTradingView_All(userName, prog_name, a);
+		// 	                if (1 == b) {
+		// 	                    for (var c = 0; c < TV_Array.length; ++c)
+		// 	                        if (TV_Array[c].id === a) return TV_Array.splice(c, 1), Promise.resolve();
+		// 	                } else return Promise.reject()
+		// 	            },
+		// 	            saveChart: function(a) {
+		// 	                a.id ? this.removeChart(a.id) : a.id = Math.random().toString(), a.timestamp = new Date().valueOf();
+		// 	                var b = JSON.parse(a.content),
+		// 	                    c = b.content,
+		// 	                    d = JSON.stringify(c, function(a, b) {
+		// 	                        return "string" == typeof b ? b.replace(/[\\]/g, "\\\\").replace(/[\/]/g, "\\/").replace(/[\b]/g, "\\b").replace(/[\f]/g, "\\f").replace(/[\n]/g, "\\n").replace(/[\r]/g, "\\r").replace(/[\t]/g, "\\t").replace(/[\"]/g, "\\\"").replace(/[\']/g, "\\'") : b
+		// 	                    });
+		// 	                c = JSON.parse(d);
+		// 	                var e = a.id,
+		// 	                    f = a.name,
+		// 	                    g = a.resolution,
+		// 	                    h = a.symbol,
+		// 	                    i = a.timestamp;
+		// 	                return SaveTradingView_All(userName, prog_name, e, f, g, c, h, i), this.charts.push(a), Promise.resolve(a.id)
+		// 	            },
+		// 	            getChartContent: function(a) {
+		// 	                for (var b = 0; b < TV_Array.length; ++b)
+		// 	                    if (TV_Array[b].id === a) return Promise.resolve(JSON.stringify(TV_Array[b]));
+		// 	                return console.error("error"), Promise.reject()
+		// 	            },
+		// 	            removeStudyTemplate: function(a) {
+		// 	                var b = a.name,
+		// 	                    c = deleteTradingView_Template(userName, prog_name, b);
+		// 	                if (1 == c) {
+		// 	                    for (var d = 0; d < Template_Array.length; ++d)
+		// 	                        if (Template_Array[d].name === a.name) return Template_Array.splice(d, 1), Promise.resolve();
+		// 	                } else return Promise.reject()
+		// 	            },
+		// 	            getStudyTemplateContent: function(a) {
+		// 	                for (var b = 0; b < Template_Array.length; ++b)
+		// 	                    if (Template_Array[b].name === a.name) return Promise.resolve(Template_Array[b].content);
+		// 	                return Promise.reject()
+		// 	            },
+		// 	            saveStudyTemplate: function(a) {
+		// 	                var b = a.content,
+		// 	                    c = a.name,
+		// 	                    d = a.meta_info;
+		// 	                SaveTradingView_Template(userName, prog_name, c, d, b);
+		// 	                for (var e = 0; e < this.studyTemplates.length; ++e)
+		// 	                    if (this.studyTemplates[e].name === a.name) {
+		// 	                        this.studyTemplates.splice(e, 1);
+		// 	                        break
+		// 	                    } return this.studyTemplates.push(a), Promise.resolve()
+		// 	            },
+		// 	            getAllStudyTemplates: function() {
+		// 	                return Promise.resolve(getTradingView_Template(userName, prog_name))
+		// 	            },
+		// 	            removeDrawingTemplate: function(a, b) {
+		// 	                for (var c = 0; c < this.drawingTemplates.length; ++c)
+		// 	                    if (this.drawingTemplates[c].name === b) return this.drawingTemplates.splice(c, 1), Promise.resolve();
+		// 	                return Promise.reject()
+		// 	            },
+		// 	            loadDrawingTemplate: function(a, b) {
+		// 	                for (var c = 0; c < this.drawingTemplates.length; ++c)
+		// 	                    if (this.drawingTemplates[c].name === b) return Promise.resolve(this.drawingTemplates[c].content);
+		// 	                return Promise.reject()
+		// 	            },
+		// 	            saveDrawingTemplate: function(a, b, c) {
+		// 	                for (var d = 0; d < this.drawingTemplates.length; ++d)
+		// 	                    if (this.drawingTemplates[d].name === b) {
+		// 	                        this.drawingTemplates.splice(d, 1);
+		// 	                        break
+		// 	                    } return this.drawingTemplates.push({
+		// 	                    name: b,
+		// 	                    content: c
+		// 	                }), Promise.resolve()
+		// 	            },
+		// 				getDrawingTemplates: function() {
+		// 	                return Promise.resolve(this.drawingTemplates.map(function(a) {
+		// 	                    return a.name
+		// 	                }))
+		// 	            }
+		// 	        },
+		// 	        custom_indicators_getter: function(a) {
+		// 	            return Promise.resolve([OpenInterest(a), CumulativeOpenInterest(a), CPR_with_Pivots(a), Custom_RSI(a), IV(a), PCR(a)])
+		// 	        }
+		// 		});
+		// 	tvnew.onChartReady(function() {
+		// 			var template = getTradingView_Template(userName, prog_name)
+		// 			var temp = JSON.parse(template[0].content);
+		// 			tvnew.chart().applyStudyTemplate(temp);
+		// 		});
+		// }
+
+
+
+		// function manipulateInputs(symbol, interval) {
+		// 	    // Manipulate inputs here
+		// 		// console.log("Get: ", tvWidget.symbolInterval());
+		// 	    if (window.tvWidget) {		
+		// 			window.tvWidget.onChartReady(function() {
+		// 			window.tvWidget.setSymbol(symbol, interval, function() {
+		// 				console.log("Done");
+		// 			});
+		// 			});
+		// 		}
+		// 	}
+
+		if (performance.navigation.type == 2) {
+			location.reload(true);
+		}
+
+
+		function initOnReady() {
+			function a(chartId) {
+				// Their is a bug related to saved template it loads the first template irrespective of
+				// historical or latest. We can fix it by introducting a new column in db named datainfo
+				// which will contain two data latest and hist from which we'll be able to segregate
+				//for now it only works for hist type by using rdDataType.
+				if ('' != 'redirect') {
+					var a = getTradingView_All(userName, prog_name);
+					if (a.length > 0) {
+						// var b = getTradingView_Template(userName);
+						////loads the saved charts at index position 0 everytime there is a reload
+						if (rdDataType != 'hist') {
+							let [chartIdFunc, listNumber] = selectContainerIdAndGiveSavedLayout(chartId, a, 'StraddleCharts.php');
+							0 < a.length && chartId.loadChartFromServer(a[listNumber]);
+							// 0 < a.length && c.loadChartFromServer(a[0]);
+						}
+					}
+				}
+				// else {
+				// 	c.onChartReady(function () {
+				// 		var template = getTradingView_Template(userName, prog_name)
+				// 		if (template.length > 0) {
+				// 			var temp = JSON.parse(template[0].content);
+				// 			tvWidget.chart().applyStudyTemplate(temp);
+				// 		}
+				// 	});
+				// }
+				// 0 < b.length && c.loadChartFromServer(b[0]);
+			}
+
+			function b(a, b, c) {
+				if ("Deleted" == b) Delete_TV_WatchList_All(userName, prog_name, a);
+				else if ("Add" == b);
+				else {
+					for (var d = c.getAllLists(), e = d[a], f = JSON.stringify(e), g = e.title, h = e.symbols.length, j = [], k = 0; k < h; k++) {
+						var l = e.symbols[k],
+							m = l.replace(/NSE:/g, "");
+						j.push(m)
+					}
+					var n = JSON.stringify({
+						id: a,
+						title: g,
+						symbols: j
+					});
+					SaveWatchList_All(userName, prog_name, a, g, j, n)
+				}
+			}
+
+			var c = (window.tvWidget1 = new TradingView.widget({
+				// symbol: "NIFTY-18950C-06JUL23:NIFTY-18950P-06JUL23",
+				symbol: "NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26",
+				timezone: "Asia/Kolkata",
+				// debug: true,
+				// interval: "240",
+				interval: "1",
+				container: "1",
+				datafeed: new Datafeeds.UDFCompatibleDatafeed(" "),
+				library_path: "charting_library-master/charting_library/",
+				locale: getParameterByName("lang") || "en",
+				disabled_features: ["save_chart_properties_to_local_storage", "chart_crosshair_menu", "order_panel", "trading_account_manager", "items_favoriting", "show_object_tree", "fix_left_edge",
+					'header_symbol_search', "header_compare", "symbol_search_hot_key", "add_to_watchlist"],
+				// widgetbar: {
+				//     details: !0,
+				// 	datawindow: !0,
+				//     watchlist: !0,
+				//     watchlist_settings: {
+				//         default_symbols: ['NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26']
+				// 		// default_symbol: [symbol]
+				//     }
+				// },
+				autosize: !0,
+				enabled_features: ["study_templates", "header_screenshot", "side_toolbar_in_fullscreen_mode",
+					"show_symbol_logos", "show_exchange_logos", "determine_first_data_request_size_using_visible_range", "request_only_visible_range_on_reset"],
+				theme: getThemeName(localStorage.getItem("isDarkMode")),
+				intraday_multipliers: ["1", "5"],
+				// overrides: {
+				// 	"mainSeriesProperties.style": 2, // Set default chart type as line (0)
+				// 	"mainSeriesProperties.lineStyle.linewidth": 1,
+				// 	"mainSeriesProperties.lineStyle.color": "#000000",
+				// 	"mainSeriesProperties.minTick": "default"
+				// },
+				save_load_adapter: {
+					charts: [],
+					studyTemplates: [],
+					drawingTemplates: [],
+					getAllCharts: function () {
+						return Promise.resolve(getTradingView_All(userName, prog_name))
+					},
+					removeChart: function (a) {
+						var b = deleteTradingView_All(userName, prog_name, a);
+						if (1 == b) {
+							for (var c = 0; c < TV_Array.length; ++c)
+								if (TV_Array[c].id === a) return TV_Array.splice(c, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					saveChart: function (a) {
+						a.id ? this.removeChart(a.id) : a.id = Math.random().toString(), a.timestamp = new Date().valueOf();
+						var b = JSON.parse(a.content),
+							c = b.content,
+							d = JSON.stringify(c, function (a, b) {
+								return "string" == typeof b ? b.replace(/[\\]/g, "\\\\").replace(/[\/]/g, "\\/").replace(/[\b]/g, "\\b").replace(/[\f]/g, "\\f").replace(/[\n]/g, "\\n").replace(/[\r]/g, "\\r").replace(/[\t]/g, "\\t").replace(/[\"]/g, "\\\"").replace(/[\']/g, "\\'") : b
+							});
+						c = JSON.parse(d);
+						var e = a.id,
+							f = a.name,
+							g = a.resolution,
+							h = a.symbol,
+							i = a.timestamp;
+						return SaveTradingView_All(userName, prog_name, e, f, g, c, h, i, chartNumber, selectedElementId), this.charts.push(a), Promise.resolve(a.id)
+					},
+					getChartContent: function (a) {
+						for (var b = 0; b < TV_Array.length; ++b)
+							if (TV_Array[b].id === a) return Promise.resolve(JSON.stringify(TV_Array[b]));
+						return console.error("error"), Promise.reject()
+					},
+					removeStudyTemplate: function (a) {
+						var b = a.name,
+							c = deleteTradingView_Template(userName, prog_name, b);
+						if (1 == c) {
+							for (var d = 0; d < Template_Array.length; ++d)
+								if (Template_Array[d].name === a.name) return Template_Array.splice(d, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					getStudyTemplateContent: function (a) {
+						for (var b = 0; b < Template_Array.length; ++b)
+							if (Template_Array[b].name === a.name) return Promise.resolve(Template_Array[b].content);
+						return Promise.reject()
+					},
+					saveStudyTemplate: function (a) {
+						var b = a.content,
+							c = a.name,
+							d = a.meta_info;
+						SaveTradingView_Template(userName, prog_name, c, d, b);
+						for (var e = 0; e < this.studyTemplates.length; ++e)
+							if (this.studyTemplates[e].name === a.name) {
+								this.studyTemplates.splice(e, 1);
+								break
+							} return this.studyTemplates.push(a), Promise.resolve()
+					},
+					getAllStudyTemplates: function () {
+						return Promise.resolve(getTradingView_Template(userName, prog_name))
+					},
+					removeDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return this.drawingTemplates.splice(c, 1), Promise.resolve();
+						return Promise.reject()
+					},
+					loadDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return Promise.resolve(this.drawingTemplates[c].content);
+						return Promise.reject()
+					},
+					saveDrawingTemplate: function (a, b, c) {
+						for (var d = 0; d < this.drawingTemplates.length; ++d)
+							if (this.drawingTemplates[d].name === b) {
+								this.drawingTemplates.splice(d, 1);
+								break
+							} return this.drawingTemplates.push({
+								name: b,
+								content: c
+							}), Promise.resolve()
+					},
+					getDrawingTemplates: function () {
+						return Promise.resolve(this.drawingTemplates.map(function (a) {
+							return a.name
+						}))
+					}
+				},
+				custom_indicators_getter: function (a) {
+					return Promise.resolve([
+						OpenInterest(a),
+						// CumulativeOpenInterest(a), 
+						Anchored_VWAP(a),
+						// CPR_with_Pivots(a), 
+						Custom_RSI(a),
+						IV(a),
+						PCR(a),
+						callOpenInterest(a),
+						CallPutPrice(a),
+						putOpenInterest(a)
+					])
+				}
+			}));
+			c.onChartReady(function () {
+				a(c)
+			});
+
+			window.tvWidget2 = new TradingView.widget({
+				// symbol: "NIFTY-18950C-06JUL23:NIFTY-18950P-06JUL23",
+				symbol: "NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26",
+				timezone: "Asia/Kolkata",
+				// debug: true,
+				// interval: "240",
+				interval: "1",
+				container: "2",
+				datafeed: new Datafeeds.UDFCompatibleDatafeed(" "),
+				library_path: "charting_library-master/charting_library/",
+				locale: getParameterByName("lang") || "en",
+				disabled_features: ["save_chart_properties_to_local_storage", "chart_crosshair_menu", "order_panel", "trading_account_manager", "items_favoriting", "show_object_tree", "fix_left_edge",
+					'header_symbol_search', "header_compare", "symbol_search_hot_key", "add_to_watchlist"],
+				// widgetbar: {
+				//     details: !0,
+				// 	datawindow: !0,
+				//     watchlist: !0,
+				//     watchlist_settings: {
+				//         default_symbols: ['NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26']
+				// 		// default_symbol: [symbol]
+				//     }
+				// },
+				autosize: !0,
+				enabled_features: ["study_templates", "header_screenshot", "side_toolbar_in_fullscreen_mode",
+					"show_symbol_logos", "show_exchange_logos", "determine_first_data_request_size_using_visible_range", "request_only_visible_range_on_reset"],
+				theme: getThemeName(localStorage.getItem("isDarkMode")),
+				intraday_multipliers: ["1", "5"],
+				// overrides: {
+				// 	"mainSeriesProperties.style": 2, // Set default chart type as line (0)
+				// 	"mainSeriesProperties.lineStyle.linewidth": 1,
+				// 	"mainSeriesProperties.lineStyle.color": "#000000",
+				// 	"mainSeriesProperties.minTick": "default"
+				// },
+				save_load_adapter: {
+					charts: [],
+					studyTemplates: [],
+					drawingTemplates: [],
+					getAllCharts: function () {
+						return Promise.resolve(getTradingView_All(userName, prog_name))
+					},
+					removeChart: function (a) {
+						var b = deleteTradingView_All(userName, prog_name, a);
+						if (1 == b) {
+							for (var c = 0; c < TV_Array.length; ++c)
+								if (TV_Array[c].id === a) return TV_Array.splice(c, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					saveChart: function (a) {
+						a.id ? this.removeChart(a.id) : a.id = Math.random().toString(), a.timestamp = new Date().valueOf();
+						var b = JSON.parse(a.content),
+							c = b.content,
+							d = JSON.stringify(c, function (a, b) {
+								return "string" == typeof b ? b.replace(/[\\]/g, "\\\\").replace(/[\/]/g, "\\/").replace(/[\b]/g, "\\b").replace(/[\f]/g, "\\f").replace(/[\n]/g, "\\n").replace(/[\r]/g, "\\r").replace(/[\t]/g, "\\t").replace(/[\"]/g, "\\\"").replace(/[\']/g, "\\'") : b
+							});
+						c = JSON.parse(d);
+						var e = a.id,
+							f = a.name,
+							g = a.resolution,
+							h = a.symbol,
+							i = a.timestamp;
+						return SaveTradingView_All(userName, prog_name, e, f, g, c, h, i, chartNumber, selectedElementId), this.charts.push(a), Promise.resolve(a.id)
+					},
+					getChartContent: function (a) {
+						for (var b = 0; b < TV_Array.length; ++b)
+							if (TV_Array[b].id === a) return Promise.resolve(JSON.stringify(TV_Array[b]));
+						return console.error("error"), Promise.reject()
+					},
+					removeStudyTemplate: function (a) {
+						var b = a.name,
+							c = deleteTradingView_Template(userName, prog_name, b);
+						if (1 == c) {
+							for (var d = 0; d < Template_Array.length; ++d)
+								if (Template_Array[d].name === a.name) return Template_Array.splice(d, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					getStudyTemplateContent: function (a) {
+						for (var b = 0; b < Template_Array.length; ++b)
+							if (Template_Array[b].name === a.name) return Promise.resolve(Template_Array[b].content);
+						return Promise.reject()
+					},
+					saveStudyTemplate: function (a) {
+						var b = a.content,
+							c = a.name,
+							d = a.meta_info;
+						SaveTradingView_Template(userName, prog_name, c, d, b);
+						for (var e = 0; e < this.studyTemplates.length; ++e)
+							if (this.studyTemplates[e].name === a.name) {
+								this.studyTemplates.splice(e, 1);
+								break
+							} return this.studyTemplates.push(a), Promise.resolve()
+					},
+					getAllStudyTemplates: function () {
+						return Promise.resolve(getTradingView_Template(userName, prog_name))
+					},
+					removeDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return this.drawingTemplates.splice(c, 1), Promise.resolve();
+						return Promise.reject()
+					},
+					loadDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return Promise.resolve(this.drawingTemplates[c].content);
+						return Promise.reject()
+					},
+					saveDrawingTemplate: function (a, b, c) {
+						for (var d = 0; d < this.drawingTemplates.length; ++d)
+							if (this.drawingTemplates[d].name === b) {
+								this.drawingTemplates.splice(d, 1);
+								break
+							} return this.drawingTemplates.push({
+								name: b,
+								content: c
+							}), Promise.resolve()
+					},
+					getDrawingTemplates: function () {
+						return Promise.resolve(this.drawingTemplates.map(function (a) {
+							return a.name
+						}))
+					}
+				},
+				custom_indicators_getter: function (a) {
+					return Promise.resolve([
+						OpenInterest(a),
+						// CumulativeOpenInterest(a), 
+						Anchored_VWAP(a),
+						// CPR_with_Pivots(a), 
+						Custom_RSI(a),
+						IV(a),
+						PCR(a),
+						callOpenInterest(a),
+						CallPutPrice(a),
+						putOpenInterest(a)
+					])
+				}
+			});
+			window.tvWidget2.onChartReady(function () {
+				a(window.tvWidget2)
+			});
+
+			window.tvWidget3 = new TradingView.widget({
+				// symbol: "NIFTY-18950C-06JUL23:NIFTY-18950P-06JUL23",
+				symbol: "NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26",
+				timezone: "Asia/Kolkata",
+				// debug: true,
+				// interval: "240",
+				interval: "1",
+				container: "3",
+				datafeed: new Datafeeds.UDFCompatibleDatafeed(" "),
+				library_path: "charting_library-master/charting_library/",
+				locale: getParameterByName("lang") || "en",
+				disabled_features: ["save_chart_properties_to_local_storage", "chart_crosshair_menu", "order_panel", "trading_account_manager", "items_favoriting", "show_object_tree", "fix_left_edge",
+					'header_symbol_search', "header_compare", "symbol_search_hot_key", "add_to_watchlist"],
+				// widgetbar: {
+				//     details: !0,
+				// 	datawindow: !0,
+				//     watchlist: !0,
+				//     watchlist_settings: {
+				//         default_symbols: ['NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26']
+				// 		// default_symbol: [symbol]
+				//     }
+				// },
+				autosize: !0,
+				enabled_features: ["study_templates", "header_screenshot", "side_toolbar_in_fullscreen_mode",
+					"show_symbol_logos", "show_exchange_logos", "determine_first_data_request_size_using_visible_range", "request_only_visible_range_on_reset"],
+				theme: getThemeName(localStorage.getItem("isDarkMode")),
+				intraday_multipliers: ["1", "5"],
+				// overrides: {
+				// 	"mainSeriesProperties.style": 2, // Set default chart type as line (0)
+				// 	"mainSeriesProperties.lineStyle.linewidth": 1,
+				// 	"mainSeriesProperties.lineStyle.color": "#000000",
+				// 	"mainSeriesProperties.minTick": "default"
+				// },
+				save_load_adapter: {
+					charts: [],
+					studyTemplates: [],
+					drawingTemplates: [],
+					getAllCharts: function () {
+						return Promise.resolve(getTradingView_All(userName, prog_name))
+					},
+					removeChart: function (a) {
+						var b = deleteTradingView_All(userName, prog_name, a);
+						if (1 == b) {
+							for (var c = 0; c < TV_Array.length; ++c)
+								if (TV_Array[c].id === a) return TV_Array.splice(c, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					saveChart: function (a) {
+						a.id ? this.removeChart(a.id) : a.id = Math.random().toString(), a.timestamp = new Date().valueOf();
+						var b = JSON.parse(a.content),
+							c = b.content,
+							d = JSON.stringify(c, function (a, b) {
+								return "string" == typeof b ? b.replace(/[\\]/g, "\\\\").replace(/[\/]/g, "\\/").replace(/[\b]/g, "\\b").replace(/[\f]/g, "\\f").replace(/[\n]/g, "\\n").replace(/[\r]/g, "\\r").replace(/[\t]/g, "\\t").replace(/[\"]/g, "\\\"").replace(/[\']/g, "\\'") : b
+							});
+						c = JSON.parse(d);
+						var e = a.id,
+							f = a.name,
+							g = a.resolution,
+							h = a.symbol,
+							i = a.timestamp;
+						return SaveTradingView_All(userName, prog_name, e, f, g, c, h, i, chartNumber, selectedElementId), this.charts.push(a), Promise.resolve(a.id)
+					},
+					getChartContent: function (a) {
+						for (var b = 0; b < TV_Array.length; ++b)
+							if (TV_Array[b].id === a) return Promise.resolve(JSON.stringify(TV_Array[b]));
+						return console.error("error"), Promise.reject()
+					},
+					removeStudyTemplate: function (a) {
+						var b = a.name,
+							c = deleteTradingView_Template(userName, prog_name, b);
+						if (1 == c) {
+							for (var d = 0; d < Template_Array.length; ++d)
+								if (Template_Array[d].name === a.name) return Template_Array.splice(d, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					getStudyTemplateContent: function (a) {
+						for (var b = 0; b < Template_Array.length; ++b)
+							if (Template_Array[b].name === a.name) return Promise.resolve(Template_Array[b].content);
+						return Promise.reject()
+					},
+					saveStudyTemplate: function (a) {
+						var b = a.content,
+							c = a.name,
+							d = a.meta_info;
+						SaveTradingView_Template(userName, prog_name, c, d, b);
+						for (var e = 0; e < this.studyTemplates.length; ++e)
+							if (this.studyTemplates[e].name === a.name) {
+								this.studyTemplates.splice(e, 1);
+								break
+							} return this.studyTemplates.push(a), Promise.resolve()
+					},
+					getAllStudyTemplates: function () {
+						return Promise.resolve(getTradingView_Template(userName, prog_name))
+					},
+					removeDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return this.drawingTemplates.splice(c, 1), Promise.resolve();
+						return Promise.reject()
+					},
+					loadDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return Promise.resolve(this.drawingTemplates[c].content);
+						return Promise.reject()
+					},
+					saveDrawingTemplate: function (a, b, c) {
+						for (var d = 0; d < this.drawingTemplates.length; ++d)
+							if (this.drawingTemplates[d].name === b) {
+								this.drawingTemplates.splice(d, 1);
+								break
+							} return this.drawingTemplates.push({
+								name: b,
+								content: c
+							}), Promise.resolve()
+					},
+					getDrawingTemplates: function () {
+						return Promise.resolve(this.drawingTemplates.map(function (a) {
+							return a.name
+						}))
+					}
+				},
+				custom_indicators_getter: function (a) {
+					return Promise.resolve([
+						OpenInterest(a),
+						// CumulativeOpenInterest(a), 
+						Anchored_VWAP(a),
+						// CPR_with_Pivots(a), 
+						Custom_RSI(a),
+						IV(a),
+						PCR(a),
+						callOpenInterest(a),
+						CallPutPrice(a),
+						putOpenInterest(a)
+					])
+				}
+			});
+			window.tvWidget3.onChartReady(function () {
+				a(window.tvWidget3)
+			});
+
+			window.tvWidget4 = new TradingView.widget({
+				// symbol: "NIFTY-18950C-06JUL23:NIFTY-18950P-06JUL23",
+				symbol: "NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26",
+				timezone: "Asia/Kolkata",
+				// debug: true,
+				// interval: "240",
+				interval: "1",
+				container: "4",
+				datafeed: new Datafeeds.UDFCompatibleDatafeed(" "),
+				library_path: "charting_library-master/charting_library/",
+				locale: getParameterByName("lang") || "en",
+				disabled_features: ["save_chart_properties_to_local_storage", "chart_crosshair_menu", "order_panel", "trading_account_manager", "items_favoriting", "show_object_tree", "fix_left_edge",
+					'header_symbol_search', "header_compare", "symbol_search_hot_key", "add_to_watchlist"],
+				// widgetbar: {
+				//     details: !0,
+				// 	datawindow: !0,
+				//     watchlist: !0,
+				//     watchlist_settings: {
+				//         default_symbols: ['NIFTY-24750C-03FEB26:NIFTY-24750P-03FEB26']
+				// 		// default_symbol: [symbol]
+				//     }
+				// },
+				autosize: !0,
+				enabled_features: ["study_templates", "header_screenshot", "side_toolbar_in_fullscreen_mode",
+					"show_symbol_logos", "show_exchange_logos", "determine_first_data_request_size_using_visible_range", "request_only_visible_range_on_reset"],
+				theme: getThemeName(localStorage.getItem("isDarkMode")),
+				intraday_multipliers: ["1", "5"],
+				// overrides: {
+				// 	"mainSeriesProperties.style": 2, // Set default chart type as line (0)
+				// 	"mainSeriesProperties.lineStyle.linewidth": 1,
+				// 	"mainSeriesProperties.lineStyle.color": "#000000",
+				// 	"mainSeriesProperties.minTick": "default"
+				// },
+				save_load_adapter: {
+					charts: [],
+					studyTemplates: [],
+					drawingTemplates: [],
+					getAllCharts: function () {
+						return Promise.resolve(getTradingView_All(userName, prog_name))
+					},
+					removeChart: function (a) {
+						var b = deleteTradingView_All(userName, prog_name, a);
+						if (1 == b) {
+							for (var c = 0; c < TV_Array.length; ++c)
+								if (TV_Array[c].id === a) return TV_Array.splice(c, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					saveChart: function (a) {
+						a.id ? this.removeChart(a.id) : a.id = Math.random().toString(), a.timestamp = new Date().valueOf();
+						var b = JSON.parse(a.content),
+							c = b.content,
+							d = JSON.stringify(c, function (a, b) {
+								return "string" == typeof b ? b.replace(/[\\]/g, "\\\\").replace(/[\/]/g, "\\/").replace(/[\b]/g, "\\b").replace(/[\f]/g, "\\f").replace(/[\n]/g, "\\n").replace(/[\r]/g, "\\r").replace(/[\t]/g, "\\t").replace(/[\"]/g, "\\\"").replace(/[\']/g, "\\'") : b
+							});
+						c = JSON.parse(d);
+						var e = a.id,
+							f = a.name,
+							g = a.resolution,
+							h = a.symbol,
+							i = a.timestamp;
+						return SaveTradingView_All(userName, prog_name, e, f, g, c, h, i, chartNumber, selectedElementId), this.charts.push(a), Promise.resolve(a.id)
+					},
+					getChartContent: function (a) {
+						for (var b = 0; b < TV_Array.length; ++b)
+							if (TV_Array[b].id === a) return Promise.resolve(JSON.stringify(TV_Array[b]));
+						return console.error("error"), Promise.reject()
+					},
+					removeStudyTemplate: function (a) {
+						var b = a.name,
+							c = deleteTradingView_Template(userName, prog_name, b);
+						if (1 == c) {
+							for (var d = 0; d < Template_Array.length; ++d)
+								if (Template_Array[d].name === a.name) return Template_Array.splice(d, 1), Promise.resolve();
+						} else return Promise.reject()
+					},
+					getStudyTemplateContent: function (a) {
+						for (var b = 0; b < Template_Array.length; ++b)
+							if (Template_Array[b].name === a.name) return Promise.resolve(Template_Array[b].content);
+						return Promise.reject()
+					},
+					saveStudyTemplate: function (a) {
+						var b = a.content,
+							c = a.name,
+							d = a.meta_info;
+						SaveTradingView_Template(userName, prog_name, c, d, b);
+						for (var e = 0; e < this.studyTemplates.length; ++e)
+							if (this.studyTemplates[e].name === a.name) {
+								this.studyTemplates.splice(e, 1);
+								break
+							} return this.studyTemplates.push(a), Promise.resolve()
+					},
+					getAllStudyTemplates: function () {
+						return Promise.resolve(getTradingView_Template(userName, prog_name))
+					},
+					removeDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return this.drawingTemplates.splice(c, 1), Promise.resolve();
+						return Promise.reject()
+					},
+					loadDrawingTemplate: function (a, b) {
+						for (var c = 0; c < this.drawingTemplates.length; ++c)
+							if (this.drawingTemplates[c].name === b) return Promise.resolve(this.drawingTemplates[c].content);
+						return Promise.reject()
+					},
+					saveDrawingTemplate: function (a, b, c) {
+						for (var d = 0; d < this.drawingTemplates.length; ++d)
+							if (this.drawingTemplates[d].name === b) {
+								this.drawingTemplates.splice(d, 1);
+								break
+							} return this.drawingTemplates.push({
+								name: b,
+								content: c
+							}), Promise.resolve()
+					},
+					getDrawingTemplates: function () {
+						return Promise.resolve(this.drawingTemplates.map(function (a) {
+							return a.name
+						}))
+					}
+				},
+				custom_indicators_getter: function (a) {
+					return Promise.resolve([
+						OpenInterest(a),
+						// CumulativeOpenInterest(a), 
+						Anchored_VWAP(a),
+						// CPR_with_Pivots(a), 
+						Custom_RSI(a),
+						IV(a),
+						PCR(a),
+						callOpenInterest(a),
+						CallPutPrice(a),
+						putOpenInterest(a)
+					])
+				}
+			});
+			window.tvWidget4.onChartReady(function () {
+				a(window.tvWidget4)
+			});
+
+
+
+		}
+		window.addEventListener("DOMContentLoaded", initOnReady, !1);
+
+		let isTabMinimized = false;
+		let minimizedStartTime;
+
+		function handleVisibilityChange() {
+			if (document.hidden) {
+				isTabMinimized = true;
+				minimizedStartTime = Date.now();
+			} else {
+				isTabMinimized = false;
+				const timeSpentMinimized = Date.now() - minimizedStartTime;
+				if (timeSpentMinimized >= 5 * 60 * 1000) {
+					window.tvWidget1.load();
+					window.tvWidget2.load();
+					window.tvWidget3.load();
+					window.tvWidget4.load();
+				}
+				console.log(`Tab was minimized for ${timeSpentMinimized / 1000} seconds`);
+			}
+		}
+
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+
+
+		function handleOnlineStatusChange() {
+			if (navigator.onLine && isOffline == true) {
+				window.tvWidget1.load();
+				window.tvWidget2.load();
+				window.tvWidget3.load();
+				window.tvWidget4.load();
+				// console.log("User came online after being offline");
+				isOffline = false;
+			} else {
+				// console.log("User is offline");
+				isOffline = true;
+			}
+		}
+
+		window.addEventListener("online", handleOnlineStatusChange);
+		window.addEventListener("offline", handleOnlineStatusChange);
+
+		$(document).ready(function () {
+			getTemplateNames(defaultTemplateID);
+		});
+
+		function getoptionnames() {
+			$.post('/opt/hcharts/stx8req/php/getOptionStrategy.php', { un: userName, strategy_type: 'Straddle' }, function (data) {
+				// 
+				// console.log(data,'data')
+				if (data != null) {
+
+					var options = '';
+					var selectedval = '';
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x];
+						// if(value==2)
+						// {
+						// if(templID === sel_strategy_names_dw) selectedval='selected';
+
+						// else selectedval='';
+						// }
+						// else
+						// {
+
+						// selectedval='';
+						// }
+						// options += '<option value="' + templID + '">' + templID + '</option>';
+						options += "<option value='" + templID + "' " + selectedval + ">" + templID + "</option>";
+						// if(defaultVal == templID) defaultValName = templName;
+					}
+					// console.log('options=', options);
+					$('#strategy_names_dw').html(options);
+				}
+				else {
+					$('#strategy_names_dw').empty("");
+				}
+
+				$("#LoadStraterytxt").text("");
+
+			}, 'json');
+
+		}
+
+
+		function isAllValuesSelected() {
+
+			if (rdDataType == 'latest') {
+
+				expDateVal = $("#optExpDate").val();
+				optCallStrVal = $("#optCallStrike").val();
+				optPutStrVal = $("#optPutStrike").val();
+
+			}
+			else {
+				expDateVal = $("#optExpDate_hist").val();
+				optCallStrVal = $("#optCallStrike_hist").val();
+				optPutStrVal = $("#optPutStrike_hist").val();
+			}
+			var q1Val = $("#optQty").val();
+			var q2Val = $("#optQty2").val();
+			var symVal = $("#optSymbol").val();
+
+			var returnVal = true;
+
+			// if(symVal == 0 || expDateVal == 0 || optCallStrVal == 0 || optPutStrVal == 0 || expDateVal == null || optCallStrVal == null || optPutStrVal == null) returnVal = false;
+			if (symVal == 0 || expDateVal == 0 || optPutStrVal == 0 || expDateVal == null || optPutStrVal == null
+				|| optCallStrVal == 0 || optPutStrVal == null) returnVal = false;
+			// if(returnVal == false){
+			if (returnVal == false) {
+				alert("Please select all values to display the chart");
+				return false;
+			}
+			var strategy_names_dw_length = $("#strategy_names_dw option").length;
+			// console.log(returnVal,strategy_names_dw_length,loadvalue)
+			//Note These checks are Required when load dropdown 
+			//if there strategy_names_dw drop down is empty return false
+			//on click of load button it changes load val to 1
+			if (loadvalue > 0) {
+				if ((returnVal == true) && (strategy_names_dw_length < 1)) {
+
+					return false;
+
+				}
+			}
+
+
+
+
+		}
+
+		function getExpiryDatesforDate_Currency(symbol) {
+			$('#optCallStrike').empty();
+			$('#optPutStrike').empty();
+			// var defaultValName='';
+			// if (defaultDate === undefined) defaultDate=curday();
+			// // // $('#optCallStrike').empty();
+			// // // $('#optPutStrike').empty();
+
+			// defaultDate=$("#txtDate").val();
+			var defaultDate = $("#defaultDate").val();
+			// console.log(defaultDate,'defaultDate')
+			if (symbol === undefined) {
+				if (SymbType == 'CUR') {
+					symbol = 'USDINR';
+				}
+				else {
+					symbol = 'NIFTY';
+				}
+			}
+
+			// $.post('https://www.fundata.in/opt/hcharts/stx8req/php/getExpiryDatesforDate.php', {dd: defaultDate, sym: symbol}, function(data){
+			// $.post('/opt/hcharts/stx8req/php/getExpiryDatesforDate.php', {dd: defaultDate, sym: symbol}, function(data){
+			$.post('/opt/hcharts/stx8req/php/getExpiryDatesforDate_Curr.php', { dd: defaultDate, sym: symbol }, function (data) {
+				// console.log('data=', data);
+				if (data != null) {
+					var options = '';
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x]['id'];
+						var templName = data[x]['name'];
+						options += '<option value="' + templID + '">' + templName + '</option>';
+
+						// if(defaultVal == templID) defaultValName = templName;
+					}
+				}
+
+				// console.log('options=', options);
+				// var optionsExpDate = '<option value="0"> Select Expiry Date</option>' + options;
+				var optionsExpDate = options;
+				// var optionsLoad = '<option value="0"> Select</option>' ;
+
+				// optionsLoad += options;
+				$('#optExpDate').html(optionsExpDate);
+
+				var expDate = $('#optExpDate').val();
+
+
+				getCallPutStrikes_Currency(expDate);
+
+
+
+
+				// $('#optTempLoadID').html(optionsLoad);
+				// && defaultVal != 99
+
+				// // if(defaultVal != 0){
+				// // $('#optTempLoadID').val(defaultVal);
+				// // $("#txtTempNameID").val(defaultValName);
+				// // }
+				// // if(defaultVal == 99) $("#txtTempNameID").attr("disabled", "disabled");
+
+			}, 'json');
+		}
+
+		//Hist***
+		function getExpiryDatesforSymbol_Currency(symbol) {
+
+			$('#optExpDate_hist').empty();
+
+			$('#optCallStrike_hist').empty();
+			$('#optPutStrike_hist').empty();
+
+
+			// var optionsExpDate = '<option value="0" >Select Expiry </option>';
+			// $('#optExpDate_hist').html(optionsExpDate);
+			// $('#optExpDate_hist').fSelect('reload');
+			var optionsCallStrike = '<option value="0">Select Call</option>';
+			$('#optCallStrike_hist').html(optionsCallStrike);
+
+			var optionsPutStrike = '<option value="0">Select Put</option>';
+			$('#optPutStrike_hist').html(optionsPutStrike);
+
+
+			// console.log(symbol,'symbol')
+			// console.log(optExpDateval,'optExpDateval')
+			if (symbol === undefined) {
+				if (SymbType == 'CUR') {
+					symbol = 'USDINR';
+				}
+				else {
+					symbol = 'NIFTY';
+				}
+			}
+			// $('.fs-label').html('Select Expiry Date');
+			// console.log('defaultDate=', defaultDate);
+			// $.post('https://www.fundata.in/hcharts/stx8req/php/getExpiryDatesforDate.php', {
+			// $.post('hcharts/stx8req/php/getExpiryDatesforSymbol.php', {
+			// $.post('hcharts/stx8req/php/getExpiryDatesforSymbol_New.php', {
+			//t***	
+			// $.post('/opt/hcharts/stx8req/php/getExpiryDatesforSymbol_Hist.php', {
+			$.post('/opt/hcharts/stx8req/php/getExpiryDatesforSymbol_HistCurr.php', {
+				sym: symbol,
+				ed: "2026-03-30"
+			}, function (data) {
+				// console.log(data,'data')
+				// $('#optExpDate_hist').fSelect('reload');
+				var dates = data[0];
+				var futexpiry = data[1];
+				var expiry = data[2];
+				var options = '';
+				for (var x = 0; x < dates.length; x++) {
+					var templID = dates[x]['id'];
+					// console.log(templID,'templID')
+					//remove selected here
+					// if(templID === optExpDateval) selectedval="";
+					// else selectedval='';
+					if (templID === expiry) selectedval = 'selected';
+					else if (templID === futexpiry) selectedval = 'selected';
+
+					else selectedval = '';
+
+					// options += '<option value="' + templID + '">' + templID + '</option>';
+					options += "<option value='" + templID + "' " + selectedval + ">" + templID + "</option>";
+					// if(defaultVal == templID) defaultValName = templName;
+
+				}
+
+				// console.log('options=', options);
+				// var optionsExpDate = '<option value="0" class="hidden">Select Expiry Date</option>' + options;
+				// var optionsExpDate = '<option value="0" class="hidden">Select Expiry </option>' + options;
+				var optionsExpDate = options;
+
+				// $('#optExpDate').empty();
+				$('#optExpDate_hist').html(optionsExpDate);
+
+				// $('#optExpDate_hist').fSelect('reload');
+
+				var expDate = $('#optExpDate_hist').val();
+
+				getCallPutStrikesHist_Currency(expDate);
+
+
+
+
+				// $("#optExpDate").find("option").eq(0).remove();
+
+			}, 'json');
+		}
+		function getCallPutStrikes_Currency(expDate) {
+			// var defaultValName='';
+			expDate = $("#optExpDate").val();
+			// console.log(expDate,'expDate')
+			defaultDate = $("#txtDate").val();
+			symbol = $("#optSymbol").val();
+			if (defaultDate === undefined) defaultDate = $("#latestDate").val();
+			// if (symbol === undefined) symbol='NIFTY';
+			// console.log('xxxxx=', defaultDate, expDate, symbol);
+
+			// $.post('/opt/hcharts/stx8req/php/getCallStrikes.php', {dd: defaultDate, ed: expDate, sym: symbol}, function(data){
+			$.post('/opt/hcharts/stx8req/php/getCallStrikes_Currency.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data) {
+				// console.log('data2=', data);
+				// if(data == null) {
+				// 	return;
+				// }
+				if (data != null) {
+					var options = '';
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x]['id'];
+						var templName = data[x]['name'];
+						options += '<option value="' + templID + '">' + templName + '</option>';
+					}
+				}
+				// console.log('options=', options);
+				var optionsCallStrike = '<option value="0"> Select Call</option>' + options;
+
+				$('#optCallStrike').html(optionsCallStrike);
+				// $.post('/opt/hcharts/stx8req/php/getClosestStrikeSymExpOT.php', {dd: defaultDate, ed: expDate, sym: symbol, ot: 'C'}, function(data3){
+				$.post('/opt/hcharts/stx8req/php/getClosestStrikeSymExpOT_Currency.php', { dd: defaultDate, ed: expDate, sym: symbol, ot: 'C' }, function (data3) {
+					$('#optCallStrike').val(data3);
+					initSelect2('#optCallStrike');
+				});
+
+			}, 'json');
+
+			// $.post('/opt/hcharts/stx8req/php/getPutStrikes.php', {dd: defaultDate, ed: expDate, sym: symbol}, function(data){
+			$.post('/opt/hcharts/stx8req/php/getPutStrikes_Currency.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data) {
+				// if(data == null) {
+				// 	alert("No Call and Put Strike Available");
+				// 	return;
+				// }
+				if (data != null) {
+					var options = '';
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x]['id'];
+						var templName = data[x]['name'];
+						options += '<option value="' + templID + '">' + templName + '</option>';
+					}
+				}
+				// console.log('options=', options);
+				var optionsCallStrike = '<option value="0"> Select Put</option>' + options;
+
+				$('#optPutStrike').html(optionsCallStrike);
+				$.post('/opt/hcharts/stx8req/php/getClosestStrikeSymExpOT_Currency.php', { dd: defaultDate, ed: expDate, sym: symbol, ot: 'P' }, function (data3) {
+					// console.log('closest=', data);
+					$('#optPutStrike').val(data3);
+					initSelect2('#optPutStrike');
+				});
+
+
+			}, 'json');
+
+			var symbol = $("#optSymbol").val();
+			optExpDateval = $('#optExpDate').val();
+			getLatestPriceInfo_eod();
+			getLatestSpotPrice_Spot(optExpDateval);
+			get_Latest_IV_IVR_IVP_MaxPain_PCR(optExpDateval);
+
+		}
+
+		function getStrikes_Currency_hist(expDate, defaultDate, optOptionType) {
+			symbol = $("#optSymbol").val();
+			if (symbol === undefined) {
+				if (SymbType == 'CUR') {
+					symbol = 'USDINR';
+				}
+				else {
+					symbol = 'NIFTY';
+				}
+			}
+			$.post('/opt/hcharts/stx8req/php/getCallStrikes_Currency_Hist.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data) {
+				// if(data == null) {
+				// 	return;
+				// }
+				if (data != null) {
+					var options = '';
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x]['id'];
+						var templName = data[x]['name'];
+						options += '<option value="' + templID + '">' + templName + '</option>';
+					}
+				}
+				var optionsCallStrike = '<option value="0"> Call Strike</option>' + options;
+				$('#optCallStrike_hist').html(optionsCallStrike);
+
+				$.post('/opt/hcharts/stx8req/php/getClosestStrike_Currency_Historical.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data3) {
+					// console.log('closest= ', data3);
+					// if(data3.length>0){
+					// 	 $('#optCallStrike_hist').prop("selectedIndex", 1);
+					// } else {
+					// 	console.log("No");
+					// 	$('#optCallStrike_hist').html(optionsPutStrike);
+					// }
+					if (data3.length > 0) $('#optCallStrike_hist').val(data3);
+					else $('#optCallStrike_hist').html(optionsCallStrike);
+					initSelect2('#optCallStrike_hist')
+				});
+
+
+			}, 'json');
+
+
+
+			$.post('/opt/hcharts/stx8req/php/getPutStrikes_Currency_Hist.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data) {
+				var options = '';
+				//  if (data == null) {
+				// 	alert("No Call and Put Strike Available");
+				// 	return;
+				//  }
+				if (data != null) {
+					for (var x = 0; x < data.length; x++) {
+						var templID = data[x]['id'];
+						var templName = data[x]['name'];
+						options += '<option value="' + templID + '">' + templName + '</option>';
+					}
+				}
+				// console.log('options=', options);
+				var optionsPutStrike = '<option value="0">Put Strike</option>' + options;
+				$('#optPutStrike_hist').html(optionsPutStrike);
+
+				$.post('/opt/hcharts/stx8req/php/getClosestStrike_Currency_Historical.php', { dd: defaultDate, ed: expDate, sym: symbol }, function (data3) {
+					// console.log('closest=', data3);
+
+					// $('#optPutStrike_hist').val(data3);
+					//    if(data3.length>0) $('#optPutStrike_hist').prop("selectedIndex", 1);
+					// 	else $('#optPutStrike_hist').html(optionsPutStrike);
+					if (data3.length > 0) $('#optPutStrike_hist').val(data3);
+					else $('#optPutStrike_hist').html(optionsPutStrike);
+
+					initSelect2('#optPutStrike_hist');
+
+
+				});
+
+			}, 'json');
+			optExpDateval = $('#optExpDate_hist').val();
+			getHistoricalSpotPrice(optExpDateval);
+			get_Hist_IV_IVR_IVP_MaxPain_PCR(optExpDateval)
+			getHistPriceInfo();
+
+		}
+
+
+		function getCallPutStrikesHist_Currency(expDate) {
+			$('#optPutStrike_hist').empty();
+			$('#optCallStrike_hist').empty();
+			symbol = $("#optSymbol").val();
+
+			// console.log(symbol,'symbol')
+			defaultDate = $("#txtDate").val();
+
+			var getexpirydate = $('#optExpDate_hist').val();
+			// console.log(getexpirydate,'strike1');
+			// $.post('hcharts/stx8req/php/getFirstExpiryTradingDate_Hist.php', {ed: getexpirydate}, function(data){
+			// $.post('/opt/hcharts/stx8req/php/getExpiryTradingDate.php', {ed: getexpirydate ,sym: symbol}, function(data){
+			$.post('/opt/hcharts/stx8req/php/getExpiryTradingDate_Curr.php', { ed: getexpirydate, sym: symbol }, function (data) {
+				// console.log(data,'data'); 
+				ExpiryTradingDate = JSON.parse(data);
+				// console.log(ExpiryTradingDate,'ExpiryTradingDate')
+				// $('#txtDate').empty();
+				// $('#txtDate').val(ExpiryTradingDate);
+
+				// if(ExpiryTradingDate==null) ExpiryTradingDate=default_histdate;
+
+
+				$('#txtDate').empty();
+				// $('#txtDate').val(ExpiryTradingDate);
+				if (ExpiryTradingDate < default_histdate) {
+					$('#txtDate').val(ExpiryTradingDate);
+
+					// defaultDate = $("#txtDate").val();
+					// getCallPutStrikesHistValues(defaultDate,expDate,symbol)
+				}
+				else {
+					$('#txtDate').val(default_histdate);
+
+					defaultDate = $("#txtDate").val();
+
+				}
+
+
+				defaultDate = $("#txtDate").val();
+				var optOptionType = $("#optOptionType").val();
+				var expDate = $('#optExpDate_hist').val();
+				getStrikes_Currency_hist(expDate, defaultDate, optOptionType);
+			});
+		}
+
+		function isNumber(evt) {
+			evt = (evt) ? evt : window.event;
+			var charCode = (evt.which) ? evt.which : evt.keyCode;
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+				return false;
+			}
+			return true;
+		}
+
+		var userName = $("#userName").val(),
+			sid = $("#sid").val(),
+			prog_name = $("#program_name").val(),
+			last_watchlist_id = $("#last_watchlist_id").val(),
+			last_watchlist_name = $("#last_watchlist_name").val(),
+			default_option_type = $("#default_option_type").val(),
+			default_expiry_date = $("#default_expiry_date").val(),
+			TV_Array = [],
+			Template_Array = [];
+
+		function getParameterByName(a) {
+			a = a.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+			var b = new RegExp("[\\?&]" + a + "=([^&#]*)"),
+				c = b.exec(location.search);
+			return null === c ? "" : decodeURIComponent(c[1].replace(/\+/g, " "))
+		}
+
+
+		setInterval(function () {
+
+
+			var dt = $('#txtDate').val();
+			// symbol=$("#optSymbol").val();
+			// var dt='2020-05-22';
+			// console.log(dt,finaldate,'hdghggcxg')
+			//check for todays date
+			if ((dt == finaldate) || (rdDataType == 'latest')) {
+				// console.log('entered ger')
+
+				var exp_data = $('#optExpDate').val();
+
+
+				if (typeof exp_data === 'undefined') {
+					exp_data = $('#optExpDate_hist').val();
+				}
+
+
+
+			}
+
+			if (rdDataType == 'latest') {
+				optExpDateval = $('#optExpDate').val();
+				getLatestPriceInfo_eod();
+				getLatestSpotPrice_Spot(optExpDateval);
+				get_Latest_IV_IVR_IVP_MaxPain_PCR(optExpDateval);
+			}
+
+		}, 60000);
+
+
+		//To handle the multiple requesting 
+		let timeoutId;
+		function delayedOnChange(value) {
+			clearTimeout(timeoutId);
+			timeoutId = setTimeout(function () {
+				if (rdDataType == 'latest') {
+					// console.log("latest",rdDataType);
+					getExpiryDatesforDate_Currency(value);
+				}
+				else {
+					//console.log("hist",rdDataType);
+					getExpiryDatesforSymbol_Currency(value);
+				}
+
+			}, 1000); // 1000 milliseconds = 1 seconds
+		}
+
+		// function initSelect2(selector) {
+		// 	let searchBar;
+		// 	if (selector.toLowerCase().includes("strike")) {
+		// 		searchBar = "Search Strike";
+		// 	} else if (selector.toLowerCase().includes("exp")) {
+		// 		searchBar = "Search Date";
+		// 	} else if (selector.toLowerCase().includes("symbol")) {
+		// 		searchBar = "Search Symbol";
+		// 	} else {
+		// 		searchBar = "Search";
+		// 	}
+
+		// 	const isDark = localStorage.getItem("isDarkMode") === "true";
+
+		// 	// Destroy any existing Select2 instance
+		// 	if ($(selector).hasClass('select2-hidden-accessible')) {
+		// 		$(selector).select2('destroy');
+		// 	}
+
+		// 	// Initialize Select2
+		// 	$(selector).select2({
+		// 		selectionCssClass: isDark ? 'select2-dark-selection' : '',
+		// 		dropdownCssClass: isDark ? 'select2-dark-dropdown' : '',
+		// 		dropdownParent: $(selector).parent()
+		// 	});
+
+		// 	// Focus the search field on open
+		// 	$(selector).on('select2:open', function () {
+		// 		// Give Select2 time to insert the search box into DOM
+		// 		setTimeout(() => {
+		// 			const searchField = document.querySelector('.select2-container--open .select2-search__field');
+		// 			if (searchField) {
+		// 				searchField.placeholder = searchBar; // custom placeholder
+		// 				searchField.focus(); // 👈 This ensures focus works every time
+		// 			}
+		// 		}, 0); // adjust delay (100–300ms) if dropdown loads slowly
+		// 	});
+		// }
+
+	</script>
+	<link rel="stylesheet" href="assets/CustomStyle.css?6.1">
+
+
+<!-- <body style="margin:0px;"> -->
+<!--<div id='pageTitle' >Futures Chart</div>-->
+<!-- <div id="tv_chart_container"></div> -->
+<!-- </body> -->
+
+
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 chart-container" id="1" style="height:84vh; padding:3 3 3 6;" onclick="selectTheElementAndProceed(this)"><iframe id="tradingview_dc062" name="tradingview_dc062" src="blob:https://www.icharts.in/2e0cd574-334f-4b4b-9512-17c79baf454a" data-widget-options="symbol=NIFTY-24750C-03FEB26%3ANIFTY-24750P-03FEB26&amp;interval=1&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22news%22%3Afalse%2C%22datawindow%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%226m%22%2C%22resolution%22%3A%22120%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%2260%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=en&amp;uid=tradingview_dc062&amp;clientId=0&amp;userId=0&amp;chartsStorageVer=1.0&amp;debug=false&amp;timezone=Asia%2FKolkata&amp;theme=light" title="Financial Chart" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="" style="display: block; width: 100%; height: 100%;">
+	</iframe></div>
+			<div class="col-md-6 chart-container" id="2" style="height:50vh; padding:3 3 3 6;" onclick="selectTheElementAndProceed(this)" hidden=""><iframe id="tradingview_970da" name="tradingview_970da" src="blob:https://www.icharts.in/264ddde1-e87c-47ed-8316-a68e81272485" data-widget-options="symbol=NIFTY-24750C-03FEB26%3ANIFTY-24750P-03FEB26&amp;interval=1&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22news%22%3Afalse%2C%22datawindow%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%226m%22%2C%22resolution%22%3A%22120%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%2260%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=en&amp;uid=tradingview_970da&amp;clientId=0&amp;userId=0&amp;chartsStorageVer=1.0&amp;debug=false&amp;timezone=Asia%2FKolkata&amp;theme=light" title="Financial Chart" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="" style="display: block; width: 100%; height: 100%;">
+	</iframe></div>
+			<div class="col-md-6 chart-container" id="3" style="height:50vh; padding:3 3 3 6;" onclick="selectTheElementAndProceed(this)" hidden=""><iframe id="tradingview_f96b3" name="tradingview_f96b3" src="blob:https://www.icharts.in/cdbb3091-cbbe-4698-90fb-9de650fbfd14" data-widget-options="symbol=NIFTY-24750C-03FEB26%3ANIFTY-24750P-03FEB26&amp;interval=1&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22news%22%3Afalse%2C%22datawindow%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%226m%22%2C%22resolution%22%3A%22120%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%2260%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=en&amp;uid=tradingview_f96b3&amp;clientId=0&amp;userId=0&amp;chartsStorageVer=1.0&amp;debug=false&amp;timezone=Asia%2FKolkata&amp;theme=light" title="Financial Chart" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="" style="display: block; width: 100%; height: 100%;">
+	</iframe></div>
+			<div class="col-md-6 chart-container" id="4" style="height:50vh; padding:3 3 3 6;" onclick="selectTheElementAndProceed(this)" hidden=""><iframe id="tradingview_9d996" name="tradingview_9d996" src="blob:https://www.icharts.in/705695cc-b823-4066-a6e8-5b8af046d13c" data-widget-options="symbol=NIFTY-24750C-03FEB26%3ANIFTY-24750P-03FEB26&amp;interval=1&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22news%22%3Afalse%2C%22datawindow%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%225y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%221W%22%7D%2C%7B%22text%22%3A%226m%22%2C%22resolution%22%3A%22120%22%7D%2C%7B%22text%22%3A%223m%22%2C%22resolution%22%3A%2260%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=en&amp;uid=tradingview_9d996&amp;clientId=0&amp;userId=0&amp;chartsStorageVer=1.0&amp;debug=false&amp;timezone=Asia%2FKolkata&amp;theme=light" title="Financial Chart" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="" style="display: block; width: 100%; height: 100%;">
+	</iframe></div>
+		</div>
+	</div>
+
+
+<script>
+	$(document).ready(function () {
+		initSelect2('#optSymbol');
+		initSelect2('#optCallStrike');
+		initSelect2('#optPutStrike');
+		initSelect2('#optCallStrike_hist');
+		initSelect2('#optPutStrike_hist');
+		initSelect2('#optExpDate_hist');
+		initSelect2('#optExpDate');
+	});
+
+	getThemeAndChangeStraddle(localStorage.getItem("isDarkMode"), false)
+
+</script>
+
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="jquery.smartmenus.js"></script>
+
+    <!-- SmartMenus jQuery init -->
+    <script type="text/javascript">
+    	$(function() {
+    		$('#main-menu').smartmenus({
+    			subMenusSubOffsetX: 1,
+    			subMenusSubOffsetY: -8,
+				showTimeout: 10,
+				hideTimeout: 10
+    		});
+    	});
+    </script>
+
+</body></html>
