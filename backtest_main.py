@@ -133,11 +133,17 @@ class IChartsDataManager:
             if 'Volume' not in df.columns and 'volume' in df.columns:
                 df['Volume'] = df['volume']
 
-            # 3. Calculate/Map VWAP
-            if 'vwap' in df.columns:
-                df['VWAP'] = df['vwap']
-            elif 'Close' in df.columns and 'Volume' in df.columns:
+            # 3. Calculate/Map VWAP - ALWAYS CALCULATE INTRADAY VWAP
+            # We ignore pre-calculated 'vwap' column because it might be cumulative across multiple days
+            if 'Close' in df.columns and 'Volume' in df.columns:
+                # Intraday VWAP starts from 09:16 (Market opens at 9:15)
+                # But some data starts slightly later. We just sum everything for THIS day.
+                # Since we already filtered 'df' for 'trading_date' at line 114, 
+                # a simple cumsum on this filtered df gives the correct intraday VWAP.
                 df['VWAP'] = (df['Close'] * df['Volume']).cumsum() / df['Volume'].cumsum()
+            elif 'vwap' in df.columns:
+                # Fallback only if Volume is missing (unlikely for straddles)
+                df['VWAP'] = df['vwap']
             
             return df
         except Exception as e:
