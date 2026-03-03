@@ -282,7 +282,8 @@ def run_backtest(
     target_dte=0,
     portfolio_sl=70,
     strategy_mode="NON_ROLLING", # "NON_ROLLING" or "ROLLING_VWAP"
-    years=None # New param for Crosswalk
+    years=None, # New param for Crosswalk
+    max_entry_time=time(14, 45)
 ):
     # Default spot_check_time if not provided
     if spot_check_time is None:
@@ -327,7 +328,7 @@ def run_backtest(
         logs, df, daily_trades = run_day_analysis(
             d, min_entry_time, entry_window_mins, exit_time, 
             sl_min_pts, sl_max_pts, trail_trigger, trail_step, rolling_step,
-            portfolio_sl, strategy_mode, spot_check_time
+            portfolio_sl, strategy_mode, spot_check_time, max_entry_time
         )
         
         # Aggregate Structured Trades
@@ -403,7 +404,8 @@ def run_day_analysis(
     rolling_step=100,
     portfolio_sl=50,
     strategy_mode="NON_ROLLING",
-    spot_check_time=None
+    spot_check_time=None,
+    max_entry_time=time(14, 45)
 ):
     if spot_check_time is None:
         spot_check_time = min_entry_time
@@ -641,6 +643,9 @@ def run_day_analysis(
                 elif curr_time > entry_window_end:
                      # Just continue monitoring spot, no entry allowed
                      pass 
+                elif curr_time.time() > max_entry_time:
+                     # Past max entry time - no entry allowed
+                     pass
                 elif curr_time < trading_start_dt:
                     pass
                 else:

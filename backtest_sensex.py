@@ -134,7 +134,8 @@ def run_backtest(
     portfolio_sl=70,  # Points?
     strategy_mode="NON_ROLLING",
     spot_check_time=None,
-    years=None
+    years=None,
+    max_entry_time=time(14, 45)
 ):
     if spot_check_time is None:
         spot_check_time = time(9, 15)
@@ -175,7 +176,7 @@ def run_backtest(
         logs, df, daily_trades = run_day_analysis(
             d, min_entry_time, entry_window_mins, exit_time, 
             sl_min_pts, sl_max_pts, trail_trigger, trail_step, rolling_step,
-            portfolio_sl, strategy_mode, spot_check_time
+            portfolio_sl, strategy_mode, spot_check_time, max_entry_time
         )
         
         # Aggregate Structured Trades
@@ -237,7 +238,8 @@ def run_day_analysis(
     target_date,
     min_entry_time, entry_window_mins, exit_time, 
     sl_min_pts, sl_max_pts, trail_trigger, trail_step, rolling_step,
-    portfolio_sl, strategy_mode, spot_check_time
+    portfolio_sl, strategy_mode, spot_check_time,
+    max_entry_time=time(14, 45)
 ):
     logs = []
     trades = []
@@ -392,6 +394,9 @@ def run_day_analysis(
                 # Check Portfolio SL
                 if portfolio_sl > 0 and trade_pnl <= -portfolio_sl:
                     pass # Day Stop Hit
+                elif curr_time.time() > max_entry_time:
+                    # Past max entry time
+                    pass
                 elif curr_time >= trading_start_dt and curr_time <= entry_window_end:
                     # Entry Check
                     idx_loc = current_straddle.index.get_loc(curr_time)

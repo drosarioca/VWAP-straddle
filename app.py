@@ -129,6 +129,11 @@ exit_hour = st.sidebar.number_input("Exit Hour", 9, 15, 15)
 exit_min = st.sidebar.number_input("Exit Minute", 0, 59, 20)
 exit_time = time(exit_hour, exit_min)
 
+st.sidebar.subheader("Cutoff Configuration")
+max_entry_hour = st.sidebar.number_input("Max Entry Hour", 9, 15, 14, help="No new trades after this time")
+max_entry_min = st.sidebar.number_input("Max Entry Minute", 0, 59, 45)
+max_entry_time = time(max_entry_hour, max_entry_min)
+
 st.sidebar.subheader("Stop Loss Settings")
 sl_min = st.sidebar.number_input("Min SL Points", 1, 50, 10)
 sl_max = st.sidebar.number_input("Max SL Points", 1, 100, 20)
@@ -287,7 +292,8 @@ with tab1:
                     portfolio_sl=portfolio_sl,
                     strategy_mode=STRATEGY_MODE,
                     spot_check_time=spot_check_time,
-                    years=filter_years
+                    years=filter_years,
+                    max_entry_time=max_entry_time
                 )
             else:
                 # Sensex
@@ -308,7 +314,8 @@ with tab1:
                     portfolio_sl=portfolio_sl,
                     strategy_mode=STRATEGY_MODE,
                     spot_check_time=spot_check_time,
-                    years=filter_years
+                    years=filter_years,
+                    max_entry_time=max_entry_time
                 )
                 # Map PnL Value to PnL for dashboard compatibility
                 if isinstance(df, tuple):
@@ -388,7 +395,8 @@ with tab2:
                 rolling_step=rolling_step,
                 portfolio_sl=portfolio_sl,
                 strategy_mode=STRATEGY_MODE,
-                spot_check_time=spot_check_time
+                spot_check_time=spot_check_time,
+                max_entry_time=max_entry_time
             )
         else:
              logs, day_df, daily_trades = backtest_sensex.run_day_analysis(
@@ -403,7 +411,8 @@ with tab2:
                 rolling_step=rolling_step,
                 portfolio_sl=portfolio_sl,
                 strategy_mode=STRATEGY_MODE,
-                spot_check_time=spot_check_time
+                spot_check_time=spot_check_time,
+                max_entry_time=max_entry_time
             )
         
         if day_df is not None and not day_df.empty:
